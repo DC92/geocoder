@@ -5,6 +5,16 @@ npm adduser myol
 npm whoami
 npm publish --access public
 
+npm audit fix --force
+Remettre dependancies: {}.
+beautify
+
+npm install
+npm run beautify > $null
+npm run lint:dom
+npm run build
+npx vite --force
+
 TODO npm delivery
 package.json
   "name": "ol-geocoder",
