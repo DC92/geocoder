@@ -19,7 +19,7 @@ const banner = readFileSync('./build/banner.js', 'utf-8')
   .replace('{description}', pkg.description)
   .replace('{homepage}', pkg.homepage)
   .replace('{version}', pkg.version)
-  .replace('{time}', new Date().toUTCString());
+  .replace('{time}', new Date().toLocaleString());
 
 sass.render({
     file: './src/sass/main.scss',

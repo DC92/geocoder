@@ -13,7 +13,7 @@ I would like to thank them and the entire development team for the fantastic wor
   </a>
 </p>
 
-A geocoder extension compatible with OpenLayers v7 & v8 (Tested with all versions from v6.15.1 to v8.0.0).
+A geocoder extension compatible with OpenLayers v6.x, v7.x & v8.x
 
 ![geocoder anim](https://raw.githubusercontent.com/Dominique92/ol-geocoder/screenshots/images/anim.gif)
 
@@ -122,7 +122,7 @@ geocoder.on('addresschosen', (evt) => {
   * `targetType`           : `'glass-button'`; Can also be `'text-input'`;
   * `featureStyle`         : `ol.style.Style`; Feature style;
   * `lang`                 : `'en-US'`; Preferable language;
-  * `limit`                : `5`; Limit of results;
+  * `limit`                : `5`; Limit of results; If limit = 1 : don't display the list but directly fies to the first found;
   * `countrycodes`         : `''`; Only valid for `osm` and `mapquest`; Limit search results to a specific country (or a list of country codes separated with commas `FR,US`). This is an [ISO 3166-1alpha2 code] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), e.g. `gb` for the United Kingdom, `br` for Brazil, etc;
   * `viewbox`              : `''`; The preferred area to find search results. Any two corner points of the box are accepted as long as they span a real box. (string) '<x1>,<y1>,<x2>,<y2>' x is longitude, y is latitude (EPSG:4326);
   * `keepOpen`             : `false`; Whether the results keep openned;

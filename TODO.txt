@@ -19,7 +19,7 @@ TODO npm delivery
 package.json
   "name": "ol-geocoder",
   "version": "4.3.1",
-  "description": "A geocoder extension compatible with OpenLayers v7+ & v8+",
+  "description": "A geocoder extension compatible with OpenLayers v6.x, v7.x & v8.x",
 remove
     "konstants",
     "src",
