@@ -2,7 +2,7 @@ $control-height: em(35px);
 $control-expand-width: em(250px);
 $control-expand-height: em(35px);
 $input-left: em(40px);
-$input-top: em(0px);
+$input-top: em(4px);
 $btn-search-width: em(25px);
 $btn-search-top: em(2px);
 $input-width: $control-expand-width - ($btn-search-width / 2);
@@ -26,6 +26,8 @@ $result-top: $control-height;
   }
 }
 .#{map-get($glass, control)} {
+  width: $control-height;
+  height: $control-height;
   overflow: hidden;
   transition: width 200ms, height 200ms;
 }
@@ -56,10 +58,10 @@ $result-top: $control-height;
   position: absolute;
   z-index: $z-index + 1;
   top: 0;
-  right: 0.2em;
+  right: 0;
   width: $btn-search-width;
   height: 100%;
-  line-height: $font-big * 1.6 - .1;
+  line-height: strip-unit($font-big * 1.5) - .1;
   border: none;
   background-color: transparent;
   display: inline-block;
@@ -70,13 +72,16 @@ $result-top: $control-height;
     content: "\2386";
     display: inline-block;
     color: #333;
-    font-size: $font-big * 1.6;
+    font-size: $font-big * 1.5;
     cursor: pointer;
   }
 }
 .#{map-get($glass, button)} {
+  position: absolute;
   width: $btn-search-width;
   height: $btn-search-width;
+  top: $btn-search-top;
+  left: $btn-search-top;
 }
 .#{map-get($glass, button)}:after {
   content: "\1F50D";
