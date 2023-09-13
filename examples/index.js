@@ -15,7 +15,7 @@ const geocoderDirect = new Geocoder('nominatim', {
   provider: 'osm',
   targetType: 'text-input',
   lang: 'en',
-  label: 'Direct access to the first found',
+  label: 'Direct fly to the first found',
   placeholder: 'Search in nominatim/OSM',
   limit: 1,
   keepOpen: false,

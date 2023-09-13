@@ -18,7 +18,7 @@ You can see
 * a [jsFiddle](http://jsfiddle.net/jonataswalker/c4qv9afb/) if you prefer.
 * a [demo of searching in proton provider using a glass button](http://dominique92.github.io/ol-geocoder/examples/control-glass.html)
 * a [demo of creating a custom provider](http://dominique92.github.io/ol-geocoder/examples/custom-provider.html)
-* a [demo of search input outside of the map](http://dominique92.github.io/ol-geocoder/examples/index.html)
+* a [demo of label, one shot fly, control out of the map](http://dominique92.github.io/ol-geocoder/examples/index.html)
 
 ## Providers
 The plugin supports (for now) the following providers:
@@ -37,9 +37,11 @@ For an example of defining and using a custom provider see [`examples/custom-pro
 Custom providers must implement the following methods:
 
 ## What's new in 4.3.1 ?
-* Add option for HTML label [#198](https://github.com/Dominique92/ol-geocoder/issues/198)
-* Is there a way to get keyboard return event to pick top choice in dropdown? [#206](https://github.com/Dominique92/ol-geocoder/issues/206)
-* #198 test [#198]
+* #102 Low-resolution icon appears blurry in HiDPI screens
+* [#198](https://github.com/Dominique92/ol-geocoder/issues/198) Add option for HTML label
+* [#206](https://github.com/Dominique92/ol-geocoder/issues/206) Is there a way to get keyboard return event to pick top choice in dropdown?
+* #236 Some 404 errors, unable to access content
+* #250 Warning when using ol-geocoder from the CDN
 
 #### `getParameters(options)`
 * `options` `{Object}`

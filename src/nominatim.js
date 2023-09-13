@@ -36,7 +36,7 @@ const klasses = VARS.cssClasses;
 /**
  * @class Nominatim
  */
-export default class Nominatim {
+export class Nominatim {
   /**
    * @constructor
    * @param {Function} base Base class.
