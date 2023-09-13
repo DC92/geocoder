@@ -8,9 +8,9 @@ import {
   terser
 } from 'rollup-plugin-terser'; // Rollup plugin to minify generated es bundle
 
-const pkg = JSON.parse(readFileSync('./package.json', 'utf-8')),
-  external = Object.keys(pkg.dependencies),
-  globals = {};
+const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
+const external = Object.keys(pkg.dependencies);
+const globals = {};
 
 const openlayers = [
   ['ol/control/Control', 'ol.control.Control'],
