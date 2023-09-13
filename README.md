@@ -1,8 +1,3 @@
-# Maintenance takeover
-While @jonataswalker & @kirtandesai ask for a new maintainer, I will assume the ol-geocoder support.
-I would like to thank them and the entire development team for the fantastic work done so far.
-@Dominque92.
-
 # OpenLayers Control Geocoder
 <p align="center">
   <a href="https://www.npmjs.com/package/ol-geocoder">
@@ -18,9 +13,12 @@ A geocoder extension compatible with OpenLayers v6.x, v7.x & v8.x
 ![geocoder anim](https://raw.githubusercontent.com/Dominique92/ol-geocoder/screenshots/images/anim.gif)
 
 ## Demo
-You can see [here a demo](http://dominique92.github.io/ol-geocoder/examples/control-nominatim.html)
-or on [jsFiddle](http://jsfiddle.net/Dominique92/c4qv9afb/) if you prefer.
-There is also a [demo of creating a custom provider](http://dominique92.github.io/ol-geocoder/examples/custom-provider.html)
+You can see
+* a [demo of searching in nominatim/OSM](http://dominique92.github.io/ol-geocoder/examples/control-nominatim.html)
+* a [jsFiddle](http://jsfiddle.net/jonataswalker/c4qv9afb/) if you prefer.
+* a [demo of searching in proton provider using a glass button](http://dominique92.github.io/ol-geocoder/examples/control-glass.html)
+* a [demo of creating a custom provider](http://dominique92.github.io/ol-geocoder/examples/custom-provider.html)
+* a [demo of search input outside of the map](http://dominique92.github.io/ol-geocoder/examples/index.html)
 
 ## Providers
 The plugin supports (for now) the following providers:
@@ -162,3 +160,8 @@ geocoder.on('addresschosen', function(evt) {
   console.info(evt);
 });
 ```
+
+# Maintenance takeover
+I would like to thank you @jonataswalker & @kirtandesai and the entire development team for the fantastic work done so far creating and maintaining this project.
+As they request a new maintainer, I will assume it within the core goals and values of the project.
+@Dominque92

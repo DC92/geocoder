@@ -23,9 +23,9 @@ export default class Html {
   }
 
   createControl() {
-    let container,
-      containerClass,
-      elements;
+    let container;
+    let containerClass;
+    let elements;
 
     if (this.options.targetType === TARGET_TYPE.INPUT) {
       containerClass = `${klasses.namespace} ${klasses.inputText.container}`;
