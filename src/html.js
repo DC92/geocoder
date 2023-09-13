@@ -83,7 +83,7 @@ Html.glass = `
 Html.input = `
   <div class="${klasses.inputText.control}">
     <label type="button" id="${VARS.inputSearchId}" class="${klasses.inputText.label}"></label>
-    <input type="text" id="${VARS.inputQueryId}" class="${klasses.inputText.input}" autocomplete="off" placeholder="SeaAAAAArch ...">
+    <input type="text" id="${VARS.inputQueryId}" class="${klasses.inputText.input}" autocomplete="off" placeholder="Search ...">
     <span class="${klasses.inputText.icon}"></span>
     <button type="button" id="${VARS.inputSearchId}" class="${klasses.inputText.search} ${klasses.hidden}"></button>
   </div>
