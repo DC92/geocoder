@@ -76,11 +76,13 @@ $result-top: $control-height + .2;
   }
 }
 .#{map-get($input-text, icon)} {
+  position: absolute;
+  top: 26px;
+  left: 9px;
   z-index: $z-index + 1;
   display: inline-block;
   width: $icon;
   height: 100%;
-  padding: 6px;
 }
 .#{map-get($input-text, icon)}:after {
   content: "\1F50D";
