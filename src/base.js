@@ -8,12 +8,8 @@ import {
   FEATURE_SRC
 } from '../konstants';
 
-import {
-  Html
-} from './html';
-import {
-  Nominatim
-} from './nominatim';
+import Html from './html';
+import Nominatim from './nominatim';
 import {
   assert,
 } from './helpers/mix';
