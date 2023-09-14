@@ -1,14 +1,7 @@
 console.log('Ol v' + ol.util.VERSION);
 
 // Instantiate with photon, little button
-const geocoderGlass = new Geocoder('nominatim', {
-  provider: 'photon',
-  targetType: 'glass-button',
-  lang: 'en',
-  placeholder: 'Search in proton',
-  limit: 5,
-  keepOpen: false,
-});
+const geocoderGlass = new Geocoder('nominatim');
 
 // Instantiate with nominatim, outside of the map
 const geocoderDirect = new Geocoder('nominatim', {

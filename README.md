@@ -58,7 +58,7 @@ Custom providers must implement the following methods:
 ##### CDN hosted - [jsDelivr](https://www.jsdelivr.com/package/npm/ol-geocoder)
 Load CSS and Javascript:
 ```HTML
-<link href="https://cdn.jsdelivr.net/npm/ol-geocoder@latest/dist/ol-geocoder.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/ol-geocoder/dist/ol-geocoder.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/ol-geocoder/dist/ol-geocoder.js"></script>
 ```
 
@@ -72,8 +72,8 @@ Load CSS and Javascript:
 ##### Github pages hosted
 Load CSS and Javascript:
 ```HTML
-<link rel="stylesheet" href="http://dominique92.github.io/ol-geocoder/dist/ol-geocoder.css">
-<script src="http://dominique92.github.io/ol-geocoder/dist/ol-geocoder-debug.js"></script>
+<link href="http://dominique92.github.io/ol-geocoder/dist/ol-geocoder.min.css" rel="stylesheet">
+<script src="http://dominique92.github.io/ol-geocoder/dist/ol-geocoder.js"></script>
 ```
 
 ##### Self hosted
@@ -117,7 +117,7 @@ geocoder.on('addresschosen', (evt) => {
   * `provider`             : `'osm'` (default), `'mapquest'`, `'photon'`, `'pelias'`, `'bing'`, `'opencage'`, custom provider instance; Your preferable provider;
   * `url`                  : `'https://nominatim.openstreetmap.org/search''`; API provider url;
   * `key`                  : `''`; API Key if required;
-  * `label`                : `label to be display in the top of the input div;
+  * `label`                : `''`; Label to display at top of input div;
   * `placeholder`          : `'Search for an address'`; Placeholder for text input;
   * `targetType`           : `'glass-button'`; Can also be `'text-input'`;
   * `featureStyle`         : `ol.style.Style`; Feature style;
