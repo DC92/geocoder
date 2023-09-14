@@ -24,6 +24,21 @@ remove
     "konstants",
     "src",
 
+gen : bo & a
+github commit
+Version 4.2.15
+ #102 Low-resolution icon appears blurry in HiDPI screens
+ #198 Add option for HTML label
+ #206 Is there a way to get keyboard return event to pick top choice in dropdown?
+ #236 Some 404 errors, unable to access content
+ #250 Warning when using ol-geocoder from the CDN
+github version
+npm
+See #102 #198 #206 #236 #250
+Zip dist
+Add to github
+
+
 TODO
 Afficher version / délivrer dans l'interface
 Clarifier livraison sources dans npm

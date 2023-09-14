@@ -45,9 +45,7 @@ export default class Base extends Control {
     };
 
     let container;
-
     let $nominatim;
-
     const $html = new Html(options);
 
     if (type === CONTROL_TYPE.NOMINATIM) {
