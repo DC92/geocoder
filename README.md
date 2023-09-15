@@ -167,10 +167,11 @@ You can customize the text input control using the js parameters to
 * Add a label inside the input field
 * Attach the control out of the map
 * One touch position access (avoid the 5 positions choice)
+
 See the [demo](http://dominique92.github.io/ol-geocoder/examples/index.html)
 
 ## Glass button customisation
-You can customize the glass button using css (to include after ol-geocoder.css
+You can customize the glass button using css (to include after ol-geocoder.css)
 For example :
 ```css
 /* Change the button position */
