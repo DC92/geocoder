@@ -18,7 +18,6 @@ You can see
 * a [jsFiddle](http://jsfiddle.net/jonataswalker/c4qv9afb/) if you prefer.
 * a [demo of searching in proton provider using a glass button](http://dominique92.github.io/ol-geocoder/examples/control-glass.html)
 * a [demo of creating a custom provider](http://dominique92.github.io/ol-geocoder/examples/custom-provider.html)
-* a [demo of label, one shot fly, control out of the map](http://dominique92.github.io/ol-geocoder/examples/index.html)
 
 ## Providers
 The plugin supports (for now) the following providers:
@@ -161,6 +160,53 @@ geocoder.on('addresschosen', function(evt) {
   // it's up to you
   console.info(evt);
 });
+```
+
+## Text input customisation
+You can customize the text input control using the js parameters to
+* Add a label inside the input field
+* Attach the control out of the map
+* One touch position access (avoid the 5 positions choice)
+See the [demo](http://dominique92.github.io/ol-geocoder/examples/index.html)
+
+## Glass button customisation
+You can customize the glass button using css (to include after ol-geocoder.css
+For example :
+```css
+/* Change the button position */
+.ol-geocoder.gcd-gl-container {
+  position: initial;
+  float: left;
+  height: 26.75px;
+  width: 26.75px;
+  margin: 2px !important;
+}
+.ol-geocoder .gcd-gl-btn {
+  position: initial;
+  height: 24.75px;
+  width: 24.75px;
+}
+/* Customise the button aspect */
+.ol-geocoder .gcd-gl-btn:after {
+  content: "\1F50E"; /* Inverse loop */
+  font-size: 15px;
+}
+/* Don't fotget to change the position of the input & result fields */
+.ol-geocoder .gcd-gl-expanded {
+  overflow: visible;
+}
+.ol-geocoder .gcd-gl-input {
+  top: 30px;
+  left: 1px;
+}
+.ol-geocoder .gcd-gl-search {
+  top: 28px;
+  left: 175px;
+}
+.ol-geocoder .gcd-gl-result {
+  top: 61px !important;
+  left: 66px !important;
+}
 ```
 
 # Maintenance takeover
