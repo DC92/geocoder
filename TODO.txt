@@ -1,3 +1,42 @@
+TypeScript Typings, Exports #248
+Would be really nice if there were TypeScript Typings
+
+Would also be good to see how to import this when in Node.js environment (whether Geocoder is default or named export)
+TypeScript
+
+
+I had a deep thinking & hesitations about this.
+Typescript is a good environment for safe & controled software, especialy for new or big & professional projects.
+I am less sure that it's mandatory for a sustaining phase where we need simplicity & reduce dependancies & risk of deprecated tools.
+ol-geocoder is a quite simple package & Typescript don't add any feature for the end user.
+
+We do have too many dependencies packages (1186 - 326 Mo where Openlayers only has 857)
+This is not only a nightmare to maintain, but also to learn, too many files if you want to grep something in the package, ...
+Also, Typescript multiply by 3 the number of code files : xxx.d.ts xxx.d.ts.map & needs to learn a different language
+For these reasons, I would like to avoid any solution adding complexity but rather to reduce it.
+
+Export as a node module & test with vite is a very important feature as the aim of ol-geocoder is to be included in projects using openlayers & other compatible packages.
+I will follow up in a separate issue (please always raise differents topics on separate issues)
+
+
+Export ol-geocoder as a module & npm-vite tests VS sass
+
+Export as a node module & test with vite is a very important feature as the aim of ol-geocoder is to be included in projects using openlayers & other compatible packages.
+There is a few to do with, I already do this in my project https://github.com/Dominique92/MyOl but with some turnaround that I have to fix.
+
+One of these is sass.
+We cannot export a module including sass without adding vite & vite-plugin-sass-dts in the packages dependencies.
+I know, this is easy to install by this is, again, adding tools to tools, including in the receiving project.
+Also, sass makes the style test & changes difficult:
+- As the html id is different from the sass constants, we can't use grep to search from the debug information where the related sass lies.
+- It's necessary to rebuild the package for any css modification attempt, even on vite. May be there is a tols for that, but this is, again, adding a tool to tools, ...
+- As I know, sass doesn't offer any feature to the end user, has a limited impact on code quality & increase the maintenance efforts.
+
+I know it's a pitty to regress from the excellent tooling of this projets & I hesitates a lot, but we do need to go to the most simple code & tooling (js, sass, a bit of html) to make is more sustainable & facilitate the projects inclusion.
+
+I would be pleased to discuss cons/pro about this before converting sass files to css.
+
+*** *** *** *** *** *** *** *** *** ***
 NPM delivery
 https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
 npm init --scope=@dom92
@@ -15,7 +54,7 @@ npm run lint:dom
 npm run build
 npx vite --force
 
-TODO npm delivery
+DELIVER A VERSION :
 package.json
   "name": "ol-geocoder",
   "version": "4.3.1",
@@ -24,10 +63,10 @@ remove
     "konstants",
     "src",
 
-gen : bo & a
+gen : a
 
 github commit
-Version 4.2.15
+Last cleaning before v4.3.1
  #102 Low-resolution icon appears blurry in HiDPI screens
  #198 Add option for HTML label
  #206 Is there a way to get keyboard return event to pick top choice in dropdown?
@@ -36,8 +75,8 @@ Version 4.2.15
 
 github Create a new release
 Chose a tag
-v4.2.15 : Create a new tag
-Name : v4.2.15
+v4.3.1 : Create a new tag
+Name : v4.3.1
 Describe :
  #102 Low-resolution icon appears blurry in HiDPI screens
  #198 Add option for HTML label
@@ -51,7 +90,7 @@ Publish release
 npm publish --access public
 
 
-TODO
+//TODO
 Afficher version / délivrer dans l'interface
 Clarifier livraison sources dans npm / Add zip in version github
 lint installé / compléter
@@ -64,7 +103,6 @@ examples/nodejs.html import ol ?
 KO
 include scss in node.js
 ajouter ~ devant import ('...css')
-test 6.15.1 avec hosted div
 
 SASS
 - New language to learn to maintain
