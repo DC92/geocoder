@@ -37,6 +37,10 @@ I know it's a pitty to regress from the excellent tooling of this projets & I he
 I would be pleased to discuss cons/pro about this before converting sass files to css.
 
 *** *** *** *** *** *** *** *** *** ***
+BUGS
+export const FEATURE_SRC = '//cdn.rawgit.com/jonataswalker/map-utils/master/images/marker.png';
+
+*** *** *** *** *** *** *** *** *** ***
 NPM delivery
 https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
 npm init --scope=@dom92
