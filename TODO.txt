@@ -31,6 +31,7 @@ Also, sass makes the style test & changes difficult:
 - As the html id is different from the sass constants, we can't use grep to search from the debug information where the related sass lies.
 - It's necessary to rebuild the package for any css modification attempt, even on vite. May be there is a tols for that, but this is, again, adding a tool to tools, ...
 - As I know, sass doesn't offer any feature to the end user, has a limited impact on code quality & increase the maintenance efforts.
+- This blocks to use vite test environment & to deliver geocoder as a module to be integrated to a new project
 
 I know it's a pitty to regress from the excellent tooling of this projets & I hesitates a lot, but we do need to go to the most simple code & tooling (js, sass, a bit of html) to make is more sustainable & facilitate the projects inclusion.
 
