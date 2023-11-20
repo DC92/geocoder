@@ -8,7 +8,7 @@
   </a>
 </p>
 
-A geocoder extension compatible with OpenLayers v6.x, v7.x & v8.x
+A geocoder extension compatible with OpenLayers v6.x, v7.x & v8.x up to 8.2.0
 
 ![geocoder anim](https://raw.githubusercontent.com/Dominique92/ol-geocoder/screenshots/images/anim.gif)
 

@@ -21,6 +21,8 @@ const banner = readFileSync('./build/banner.js', 'utf-8')
   .replace('{version}', pkg.version)
   .replace('{time}', new Date().toLocaleString());
 
+//TODO error build : Without `from` option PostCSS could generate wrong source map and will not find Browserslist config. Set it to CSS file path or to `undefined` to prevent this warning.
+
 sass.render({
     file: './src/sass/main.scss',
     importer: jsonImporter(),
@@ -29,11 +31,11 @@ sass.render({
     if (err) throw err.message;
 
     const prefixer = postcss([autoprefixer(), postcssReport({
-      clearMessages: true
+      clearMessages: true,
     })]);
 
     prefixer.process(result.css, {
-      from: undefined
+      from: undefined,
     }).then((res) => {
       res.warnings().forEach((warn) => {
         console.warn(warn.toString());
@@ -53,27 +55,24 @@ sass.render({
 
           // eslint-disable-next-line no-console
           console.log(
-            boxen(
-              [
-                chalk.green.bold('CSS: '),
-                chalk.yellow.bold(cssSize),
-                ', ',
-                chalk.green.bold('Gzipped: '),
-                chalk.yellow.bold(cssGzip),
-                '\n',
-                chalk.green.bold('Minified: '),
-                chalk.yellow.bold(cssMinSize),
-                ', ',
-                chalk.green.bold('Gzipped: '),
-                chalk.yellow.bold(cssMinGzip),
-                '\n',
-                chalk.green.bold('Now: '),
-                chalk.yellow.bold(new Date()),
-              ].join(''), {
-                padding: 1
-              }
-            )
-          );
+            boxen([
+              chalk.green.bold('CSS: '),
+              chalk.yellow.bold(cssSize),
+              ', ',
+              chalk.green.bold('Gzipped: '),
+              chalk.yellow.bold(cssGzip),
+              '\n',
+              chalk.green.bold('Minified: '),
+              chalk.yellow.bold(cssMinSize),
+              ', ',
+              chalk.green.bold('Gzipped: '),
+              chalk.yellow.bold(cssMinGzip),
+              '\n',
+              chalk.green.bold('Now: '),
+              chalk.yellow.bold(new Date()),
+            ].join(''), {
+              padding: 1,
+            }));
         });
     });
   }
