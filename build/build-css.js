@@ -21,8 +21,6 @@ const banner = readFileSync('./build/banner.js', 'utf-8')
   .replace('{version}', pkg.version)
   .replace('{time}', new Date().toLocaleString());
 
-//TODO error build : Without `from` option PostCSS could generate wrong source map and will not find Browserslist config. Set it to CSS file path or to `undefined` to prevent this warning.
-
 sass.render({
     file: './src/sass/main.scss',
     importer: jsonImporter(),
