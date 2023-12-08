@@ -38,7 +38,8 @@ I know it's a pitty to regress from the excellent tooling of this projets & I he
 I would be pleased to discuss cons/pro about this before converting sass files to css.
 
 *** *** *** *** *** *** *** *** *** ***
-TODO BUG export const FEATURE_SRC = '//cdn.rawgit.com/jonataswalker/map-utils/master/images/marker.png';
+//TODO BUG export const FEATURE_SRC = '//cdn.rawgit.com/jonataswalker/map-utils/master/images/marker.png';
+//TODO BUG Geocoder : bouton envoi trop a gauche sur Android (ex: chemineur)
 
 //TODO error build : Without `from` option PostCSS could generate wrong source map and will not find Browserslist config. Set it to CSS file path or to `undefined` to prevent this warning.
 
