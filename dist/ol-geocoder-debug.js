@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.2.17-dev
  * DEVELOPMENT : DON'T USE
  * https://github.com/Dominique92/ol-geocoder
- * Built: 20/11/2023 14:29:31
+ * Built: 27/02/2024 10:06:14
  */
  
  
@@ -809,6 +809,7 @@
 
       this.layerName = randomId('geocoder-layer-');
       this.layer = new LayerVector__default["default"]({
+        background: 'transparent',
         name: this.layerName,
         source: new SourceVector__default["default"](),
         displayInLayerSwitcher: false, // Remove search layer from legend https://github.com/Dominique92/ol-geocoder/issues/256
