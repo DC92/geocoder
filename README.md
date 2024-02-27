@@ -8,7 +8,7 @@
   </a>
 </p>
 
-A geocoder extension compatible with OpenLayers v6.x, v7.x & v8.x up to 8.2.0
+A geocoder extension compatible with OpenLayers v6.x to 9.0.0
 
 ![geocoder anim](https://raw.githubusercontent.com/Dominique92/ol-geocoder/screenshots/images/anim.gif)
 
@@ -19,7 +19,7 @@ You can see
 * a [demo of searching in proton provider using a glass button](http://dominique92.github.io/ol-geocoder/examples/control-glass.html)
 * a [demo of creating a custom provider](http://dominique92.github.io/ol-geocoder/examples/custom-provider.html)
 
-## What's new in 4.3.2 ?
+## What's new in 4.3.3 ?
 * [#000](https://github.com/Dominique92/ol-geocoder/issues/000) Bla bla
 
 ## Providers

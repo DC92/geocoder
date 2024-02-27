@@ -65,33 +65,29 @@ npx vite --force
 DELIVER A VERSION :
 package.json
   "name": "ol-geocoder",
-  "version": "4.3.1",
-  "description": "A geocoder extension compatible with OpenLayers v6.x, v7.x & v8.x",
+  "version": "4.3.2",
+  "description": "A geocoder extension compatible with OpenLayers v6.x to 9.0.0",
 remove
     "konstants",
     "src",
 
-gen : a
+gen : a ?????????????????????
 
 github commit
-Last cleaning before v4.3.1
- #102 Low-resolution icon appears blurry in HiDPI screens
- #198 Add option for HTML label
- #206 Is there a way to get keyboard return event to pick top choice in dropdown?
- #236 Some 404 errors, unable to access content
- #250 Warning when using ol-geocoder from the CDN
+Last cleaning before v4.3.2
+#279 Bump @babel/traverse from 7.22.17 to 7.23.2
+#280 Bump @adobe/css-tools from 4.3.1 to 4.3.2
+#282 Tile layer is hidden by the marker layer in Openlayers 9.0.0
 
 github Create a new release
 Chose a tag
-v4.3.1 : Create a new tag
-Name : v4.3.1
+v4.3.2 : Create a new tag
+Name : v4.3.2
 Describe :
- #102 Low-resolution icon appears blurry in HiDPI screens
- #198 Add option for HTML label
- #206 Is there a way to get keyboard return event to pick top choice in dropdown?
- #236 Some 404 errors, unable to access content
- #250 Warning when using ol-geocoder from the CDN
-Zip dist : ol-geocoder-4.x.x.zip
+#279 Bump @babel/traverse from 7.22.17 to 7.23.2
+#280 Bump @adobe/css-tools from 4.3.1 to 4.3.2
+#282 Tile layer is hidden by the marker layer in Openlayers 9.0.0
+Zip dist : ol-geocoder-4.3.2.zip
 Attach binaries by dropping them here or selecting them.
 Publish release
 
