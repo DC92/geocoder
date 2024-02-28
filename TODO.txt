@@ -74,15 +74,17 @@ remove
 gen : a ?????????????????????
 
 github commit
-Last cleaning before v4.3.2
+Bump to v4.3.2
 #279 Bump @babel/traverse from 7.22.17 to 7.23.2
 #280 Bump @adobe/css-tools from 4.3.1 to 4.3.2
 #282 Tile layer is hidden by the marker layer in Openlayers 9.0.0
 
-github Create a new release
+github
+Releases
+Draft a new release
 Chose a tag
 v4.3.2 : Create a new tag
-Name : v4.3.2
+Release title : v4.3.2
 Describe :
 #279 Bump @babel/traverse from 7.22.17 to 7.23.2
 #280 Bump @adobe/css-tools from 4.3.1 to 4.3.2

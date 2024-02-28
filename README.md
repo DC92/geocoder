@@ -19,7 +19,7 @@ You can see
 * a [demo of searching in proton provider using a glass button](http://dominique92.github.io/ol-geocoder/examples/control-glass.html)
 * a [demo of creating a custom provider](http://dominique92.github.io/ol-geocoder/examples/custom-provider.html)
 
-## What's new in 4.3.3 ?
+## What's new in 4.3.? ?
 * [#000](https://github.com/Dominique92/ol-geocoder/issues/000) Bla bla
 
 ## Providers
@@ -205,8 +205,3 @@ For example :
   left: 66px !important;
 }
 ```
-
-# Maintenance takeover
-I would like to thank you @jonataswalker & @kirtandesai and the entire development team for the fantastic work done so far creating and maintaining this project.
-As they request a new maintainer, I will assume it within the core goals and values of the project.
-@Dominque92
