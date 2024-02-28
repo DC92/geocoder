@@ -49,7 +49,7 @@ export default class Nominatim {
       background: 'transparent',
       name: this.layerName,
       source: new SourceVector(),
-      displayInLayerSwitcher: false, // Remove search layer from legend https://github.com/Dominique92/ol-geocoder/issues/256
+      displayInLayerSwitcher: false, // Remove search layer from legend
     });
 
     this.options = base.options;

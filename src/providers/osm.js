@@ -8,8 +8,7 @@ export default class OpenStreet {
   constructor(options) {
     this.settings = {
       url: 'https://nominatim.openstreetmap.org/search',
-      ...options, // Allow custom URL for osm provider https://github.com/Dominique92/ol-geocoder/issues/266
-
+      ...options, // Allow custom URL for osm provider
       params: {
         q: '',
         format: 'json',
