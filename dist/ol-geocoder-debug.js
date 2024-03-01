@@ -1,8 +1,8 @@
 /*!
- * @myol/geocoder - v4.2.17-dev
+ * @myol/geocoder - v4.2.18-dev
  * DEVELOPMENT : DON'T USE
  * https://github.com/Dominique92/ol-geocoder
- * Built: 27/02/2024 10:06:14
+ * Built: 01/03/2024 13:43:28
  */
  
  
@@ -555,8 +555,7 @@
     constructor(options) {
       this.settings = {
         url: 'https://nominatim.openstreetmap.org/search',
-        ...options, // Allow custom URL for osm provider https://github.com/Dominique92/ol-geocoder/issues/266
-
+        ...options, // Allow custom URL for osm provider
         params: {
           q: '',
           format: 'json',
@@ -812,7 +811,7 @@
         background: 'transparent',
         name: this.layerName,
         source: new SourceVector__default["default"](),
-        displayInLayerSwitcher: false, // Remove search layer from legend https://github.com/Dominique92/ol-geocoder/issues/256
+        displayInLayerSwitcher: false, // Remove search layer from legend
       });
 
       this.options = base.options;
