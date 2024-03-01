@@ -11,7 +11,7 @@ $result-top: $control-height + .2;
   width: $container-width;
   height: $control-height;
   top: .5em;
-  left: calc(50% - #{$container-width / 2});
+  left: calc(50% - #{calc($container-width / 2)});
   box-sizing: border-box;
 
   *,

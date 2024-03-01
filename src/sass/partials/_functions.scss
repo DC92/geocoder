@@ -1,9 +1,12 @@
+@use 'sass:math';
+
 @function strip-unit($value) {
   @if type-of($value) != "number" {
     @warn "You tried to remove unit from NaN (#{type-of($value)})";
     @return $value;
   }
-  @return $value / ($value * 0 + 1);
+  $v: $value * 0 + 1;
+  @return calc($value / $v);
 }
 
 @function sum-pixel($v1, $v2) {
@@ -26,7 +29,8 @@
 // @link: http://stackoverflow.com/a/12335841/1779999
 // @usage: parse-int(10px) => 10
 @function parse-int($number) {
-  @return $number / ($number * 0 + 1);
+  $n: $number * 0 + 1;
+  @return calc($number / $n);
 }
 
 // Simply adds the em unit to a given number. This is used twice in the
@@ -57,7 +61,7 @@
       $value: parse-int($value);
 
       @if $unit == "px" {
-        $result: append($result, add-em-unit($value / ($base-font-size * $em-base)));
+        $result: append($result, add-em-unit(calc($value / ($base-font-size * $em-base))));
       } @else if $unit == "em" {
         $result: append($result, add-em-unit($value / $em-base));
       }
