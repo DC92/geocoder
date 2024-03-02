@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.2.18-dev
  * DEVELOPMENT : DON'T USE
  * https://github.com/Dominique92/ol-geocoder
- * Built: 02/03/2024 15:21:54
+ * Built: 02/03/2024 15:45:05
  */
  
  .ol-touch .ol-control.gcd-gl-control button {
@@ -104,7 +104,7 @@
     overflow: hidden;
     border-bottom: 1px solid #eee;
     padding: 0;
-    line-height: calc($c * 1rem); }
+    line-height: 0.875rem; }
     .ol-geocoder ul.gcd-gl-result > li > a {
       display: block;
       text-decoration: none;
@@ -216,7 +216,7 @@
     overflow: hidden;
     border-bottom: 1px solid #eee;
     padding: 0;
-    line-height: calc($c * 1rem); }
+    line-height: 0.875rem; }
     .ol-geocoder ul.gcd-txt-result > li > a {
       display: block;
       text-decoration: none;
