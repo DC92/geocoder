@@ -30,6 +30,10 @@ I know, this is easy to install by this is, again, adding tools to tools, includ
 Also, sass makes the style test & changes difficult:
 - As the html id is different from the sass constants, we can't use grep to search from the debug information where the related sass lies.
 - It's necessary to rebuild the package for any css modification attempt, even on vite. May be there is a tols for that, but this is, again, adding a tool to tools, ...
+- scss will depreciate the calculation inside a declaration, we must use calc() in place
+- calc() introduce a type verification (e.g. dont ass em to px) that drives a nightmare to correct
+- I did not fiond any debug nor trace facility to 
+- Trying to add a vite sass preprocessor drives me to a very complex modules architecture & debug build-css.js (that I don't really understand)
 - As I know, sass doesn't offer any feature to the end user, has a limited impact on code quality & increase the maintenance efforts.
 - This blocks to use vite test environment & to deliver geocoder as a module to be integrated to a new project
 

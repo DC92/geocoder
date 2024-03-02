@@ -2,11 +2,10 @@
  * @myol/geocoder - v4.2.18-dev
  * DEVELOPMENT : DON'T USE
  * https://github.com/Dominique92/ol-geocoder
- * Built: 01/03/2024 20:22:22
+ * Built: 02/03/2024 15:21:54
  */
  
- @use 'sass:math';
-.ol-touch .ol-control.gcd-gl-control button {
+ .ol-touch .ol-control.gcd-gl-control button {
   font-size: 1.14em; }
 
 .ol-touch .ol-geocoder.gcd-gl-container {
@@ -38,7 +37,7 @@
   z-index: 99;
   top: 0.25em;
   left: 2.5em;
-  width: 14.84375em;
+  width: 15.625em-calc($btn-search-width / 2);
   padding: 5px;
   border: 1px solid #ccc;
   font-family: inherit;
@@ -105,7 +104,7 @@
     overflow: hidden;
     border-bottom: 1px solid #eee;
     padding: 0;
-    line-height: 0.875rem; }
+    line-height: calc($c * 1rem); }
     .ol-geocoder ul.gcd-gl-result > li > a {
       display: block;
       text-decoration: none;
@@ -123,7 +122,7 @@
   width: 25em;
   height: 4.375em;
   top: .5em;
-  left: calc(50% - 12.5em);
+  left: calc(50% - calc($container-width / 2));
   box-sizing: border-box; }
   .ol-geocoder.gcd-txt-container *,
   .ol-geocoder.gcd-txt-container *::before,
@@ -217,7 +216,7 @@
     overflow: hidden;
     border-bottom: 1px solid #eee;
     padding: 0;
-    line-height: 0.875rem; }
+    line-height: calc($c * 1rem); }
     .ol-geocoder ul.gcd-txt-result > li > a {
       display: block;
       text-decoration: none;

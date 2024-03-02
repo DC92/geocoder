@@ -42,7 +42,9 @@ sass.render({
       writeFileSync('./dist/ol-geocoder.css', banner + res.css);
 
       cssnano()
-        .process(res.css)
+        .process(res.css, {
+          from: undefined,
+        })
         .then((min) => {
           writeFileSync('./dist/ol-geocoder.min.css', banner + min.css);
 
