@@ -10,11 +10,13 @@
 }
 
 @mixin font-size($size: 12, $base: 16) {
-	font-size: (strip-unit($size) / strip-unit($base)) * 1rem;
+	$s: calc(strip-unit($size) / strip-unit($base));
+	font-size: calc($s * 1rem);
 }
 
 @mixin line-height($height: 16, $base: 16) {
-	line-height: (strip-unit($height) / strip-unit($base)) * 1rem;
+	$s: calc(strip-unit($height) / strip-unit($base));
+	line-height: calc($s * 1rem);
 }
 
 @mixin background-linear-gradient($color1, $color2) {
