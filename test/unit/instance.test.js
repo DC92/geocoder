@@ -9,7 +9,7 @@ import SourceVector from 'ol/source/Vector';
 
 // eslint-disable-next-line no-shadow
 import Geocoder from '../../dist/ol-geocoder';
-import { DEFAULT_OPTIONS, PROVIDERS } from '../../konstants';
+import { DEFAULT_OPTIONS, PROVIDERS } from '../../src/konstants';
 
 const options = {
   provider: PROVIDERS.PHOTON,

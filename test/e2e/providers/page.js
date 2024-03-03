@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 
-import { VARS } from '../../../konstants';
+import { VARS } from '../../../src/konstants';
 
 export default class Page {
   constructor() {

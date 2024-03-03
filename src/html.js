@@ -1,7 +1,7 @@
 import {
   VARS,
   TARGET_TYPE
-} from '../konstants';
+} from './konstants';
 
 import {
   createElement

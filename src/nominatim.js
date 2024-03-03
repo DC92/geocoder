@@ -9,7 +9,7 @@ import {
   TARGET_TYPE,
   PROVIDERS,
   EVENT_TYPE
-} from '../konstants';
+} from './konstants';
 import {
   hasClass,
   addClass,

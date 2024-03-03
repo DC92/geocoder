@@ -1,4 +1,4 @@
-import { TARGET_TYPE } from '../../../konstants';
+import { TARGET_TYPE } from '../../../src/konstants';
 
 import Page from './page';
 

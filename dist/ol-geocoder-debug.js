@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.2.18-dev
  * DEVELOPMENT : DON'T USE
  * https://github.com/Dominique92/ol-geocoder
- * Built: 03/03/2024 17:45:52
+ * Built: 03/03/2024 21:37:24
  */
  
  
@@ -109,8 +109,6 @@
     GLASS: 'glass-button',
     INPUT: 'text-input',
   };
-
-  const FEATURE_SRC = '//cdn.rawgit.com/jonataswalker/map-utils/master/images/marker.png';
 
   const PROVIDERS = {
     OSM: 'osm',
@@ -1170,7 +1168,8 @@
           new Style__default["default"]({
             image: new Icon__default["default"]({
               scale: 0.7,
-              src: FEATURE_SRC
+              //TODO get the marker from the package
+              src: '//cdn.rawgit.com/jonataswalker/map-utils/master/images/marker.png',
             })
           }),
         ],

@@ -5,8 +5,7 @@ import Icon from 'ol/style/Icon';
 import {
   CONTROL_TYPE,
   DEFAULT_OPTIONS,
-  FEATURE_SRC
-} from '../konstants';
+} from './konstants';
 
 import Html from './html';
 import Nominatim from './nominatim';
@@ -37,7 +36,8 @@ export default class Base extends Control {
         new Style({
           image: new Icon({
             scale: 0.7,
-            src: FEATURE_SRC
+            //TODO get the marker from the package
+            src: '//cdn.rawgit.com/jonataswalker/map-utils/master/images/marker.png',
           })
         }),
       ],

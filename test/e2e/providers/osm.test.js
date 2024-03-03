@@ -1,4 +1,4 @@
-import { PROVIDERS } from '../../../konstants';
+import { PROVIDERS } from '../../../src/konstants';
 
 import Page from './page';
 
