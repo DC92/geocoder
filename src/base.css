@@ -1,46 +1,8 @@
-/* Common */
-.ol-geocoder .gcd-hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.ol-geocoder .gcd-pseudo-rotate::after {
-  animation: spin .7s linear infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.gcd-address {
-  font-size: 0.875em;
-  font-weight: 500;
-  color: #333;
-}
-
-.gcd-road {
-  font-size: 0.875em;
-  font-weight: 500;
-  color: #333;
-}
-
-.gcd-city {
-  font-size: 0.75em;
-  font-weight: normal;
-  color: #333;
-}
-
-.gcd-country {
-  font-size: 0.75em;
-  font-weight: lighter;
-  color: #333;
-}
+/*!
+ * ol-geocoder
+ * A geocoder extension compatible with OpenLayers v6.x to v9.0
+ * https://github.com/Dominique92/ol-geocoder
+ */
 
 /* Glass style */
 .ol-touch .ol-control.gcd-gl-control button {
@@ -314,4 +276,48 @@
 
 .ol-geocoder ul.gcd-txt-result:empty {
   display: none;
+}
+
+/* Common */
+.ol-geocoder .gcd-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ol-geocoder .gcd-pseudo-rotate::after {
+  animation: spin .7s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gcd-address {
+  font-size: 0.875em;
+  font-weight: 500;
+  color: #333;
+}
+
+.gcd-road {
+  font-size: 0.875em;
+  font-weight: 500;
+  color: #333;
+}
+
+.gcd-city {
+  font-size: 0.75em;
+  font-weight: normal;
+  color: #333;
+}
+
+.gcd-country {
+  font-size: 0.75em;
+  font-weight: lighter;
+  color: #333;
 }

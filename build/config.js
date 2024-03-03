@@ -3,10 +3,9 @@ import {
 } from 'fs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import css from 'rollup-plugin-import-css'; // Collect .css imports in .js modules
 import json from '@rollup/plugin-json';
-import {
-  terser
-} from 'rollup-plugin-terser'; // Rollup plugin to minify generated es bundle
+import terser from '@rollup/plugin-terser'; // Rollup plugin to minify generated es bundle
 
 const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
 const external = Object.keys(pkg.dependencies);
@@ -37,7 +36,7 @@ const banner = readFileSync('./build/banner.js', 'utf-8')
 
 export default [{
     external,
-    input: './src/base.js',
+    input: './build/dist.js',
     output: {
       banner,
       globals,
@@ -51,6 +50,9 @@ export default [{
       commonjs({
         include: 'node_modules/**',
       }),
+      css({
+        output: 'ol-geocoder.css',
+      }),
       json({
         exclude: 'node_modules/**'
       }),
@@ -63,7 +65,7 @@ export default [{
   },
   {
     external,
-    input: './src/base.js',
+    input: './build/dist.js',
     output: {
       banner,
       globals,
@@ -76,6 +78,10 @@ export default [{
       nodeResolve(),
       commonjs({
         include: 'node_modules/**',
+      }),
+      css({
+        minify: true,
+        output: 'ol-geocoder.min.css',
       }),
       json({
         exclude: 'node_modules/**'

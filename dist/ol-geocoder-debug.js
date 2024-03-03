@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.2.18-dev
  * DEVELOPMENT : DON'T USE
  * https://github.com/Dominique92/ol-geocoder
- * Built: 02/03/2024 15:45:03
+ * Built: 03/03/2024 17:45:52
  */
  
  
@@ -1231,6 +1231,8 @@
       this.options.key = key;
     }
   }
+
+  // This file defines the contents of the dist/* libraries
 
   return Base;
 

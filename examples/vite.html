@@ -13,8 +13,10 @@
   <script src="https://unpkg.com/ol-popup@5.0.0/dist/ol-popup.js"></script>
 
   <script type="module">
-    import '../src/sass/main.scss';
+    import '../src/base.css';
     import Geocoder from '../src/base';
+
+    // Export Geocoder as global class
     window.Geocoder = Geocoder;
   </script>
 
@@ -23,7 +25,7 @@
 </head>
 
 <body>
-  <p>This example needs to be run on <a href="https://nodejs.org/">nodejs</a> environment.</p>
+  <p>This example needs to be run on a <a href="https://nodejs.org/">nodejs</a> environment.</p>
 
   <div id="map"></div>
 </body>
