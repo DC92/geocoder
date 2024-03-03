@@ -5,7 +5,7 @@ $input-left: em(40px);
 $input-top: em(4px);
 $btn-search-width: em(25px);
 $btn-search-top: em(2px);
-$input-width: $control-expand-width - calc($btn-search-width / 2);
+$input-width: $control-expand-width - ($btn-search-width / 2);
 $result-width: em(260px);
 $result-max-height: em(300px);
 $result-left: em(32px);

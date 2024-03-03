@@ -82,7 +82,7 @@
   z-index: 99;
   top: 0.25em;
   left: 2.5em;
-  width: 15.625em-calc($btn-search-width / 2);
+  width: 14.84375em;
   padding: 5px;
   border: 1px solid #ccc;
   font-family: inherit;
@@ -186,7 +186,7 @@
   width: 25em;
   height: 4.375em;
   top: .5em;
-  left: calc(50% - calc($container-width / 2));
+  left: calc(50% - 12.5em);
   box-sizing: border-box;
 }
 
