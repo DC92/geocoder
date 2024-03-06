@@ -1,4 +1,4 @@
-/*!
+/*
  * {name} - v{version}
  * {description}
  * {homepage}
