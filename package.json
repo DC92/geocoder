@@ -1,29 +1,18 @@
 {
   "name": "@myol/geocoder",
-  "version": "4.2.18-dev",
+  "version": "4.3.3-1",
   "description": "DEVELOPMENT : DON'T USE",
-  "author": "Jonatas Walker",
-  "homepage": "https://github.com/Dominique92/ol-geocoder",
+  "author": "Dominique Cavailhez",
+  "homepage": "https://github.com/DC92/geocoder",
   "license": "MIT",
   "main": "dist/ol-geocoder.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Dominique92/ol-geocoder.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Dominique92/ol-geocoder/issues"
+    "url": "git://github.com/DC92/geocoder.git"
   },
   "files": [
     "src",
     "dist"
-  ],
-  "browserslist": [
-    "defaults"
-  ],
-  "keywords": [
-    "geocoder",
-    "openlayers",
-    "nominatim"
   ],
   "scripts": {
     "beautify": "js-beautify -s=2 *.js build/*c* examples/* konstants/* src/*.*s src/helpers/* src/providers/* package.json",
