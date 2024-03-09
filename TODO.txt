@@ -99,16 +99,8 @@ npm publish --access public
 //TODO
 Afficher version / délivrer dans l'interface
 Clarifier livraison sources dans npm / Add zip in version github
-lint installé / compléter
 tests / compléter
-enlever sass
-examples/nodejs.html import ol ?
 -((win, doc) => {
-+<p>Oups ! We have a problem here...</p>
-
-KO
-include scss in node.js
-ajouter ~ devant import ('...css')
 
 SASS
 - New language to learn to maintain
