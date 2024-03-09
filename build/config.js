@@ -36,7 +36,7 @@ const banner = readFileSync('./build/banner.js', 'utf-8')
 
 export default [{
     external,
-    input: './build/dist.js',
+    input: './build/geocoder.js',
     output: {
       banner,
       globals,
@@ -65,7 +65,7 @@ export default [{
   },
   {
     external,
-    input: './build/dist.js',
+    input: './build/geocoder.js',
     output: {
       banner,
       globals,
