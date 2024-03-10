@@ -1,12 +1,10 @@
-/*
+/*! OPENLAYERS CONTROL GEOCODER
  * @myol/geocoder - v4.3.3-4-dev
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 10/03/2024 21:15:28
+ * Built: 10/03/2024 21:37:31
  */
 
- 
- 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('ol/control/Control'), require('ol/style/Style'), require('ol/style/Icon'), require('ol/layer/Vector'), require('ol/source/Vector'), require('ol/geom/Point'), require('ol/Feature'), require('ol/proj')) :
   typeof define === 'function' && define.amd ? define(['ol/control/Control', 'ol/style/Style', 'ol/style/Icon', 'ol/layer/Vector', 'ol/source/Vector', 'ol/geom/Point', 'ol/Feature', 'ol/proj'], factory) :

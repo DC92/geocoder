@@ -5,10 +5,12 @@
 //TODO tests test:unit KO
 //BEST tests: delete -((win, doc) => {
 
-Next délivery
+*** *** *** *** *** *** *** *** *** ***
+NEXT DÉLIVERY
 #283
 new embed cursor
 getVersion()
+banner on compressed library
 
 *** *** *** *** *** *** *** *** *** ***
 TypeScript Typings, Exports #248
