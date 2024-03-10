@@ -1,5 +1,3 @@
-console.log('Ol v' + ol.util.VERSION);
-
 // Instantiate with photon, little button
 const geocoderGlass = new Geocoder('nominatim');
 
@@ -56,3 +54,6 @@ new ol.Map({
     popup,
   ],
 });
+
+console.log('Openlayers v' + ol.util.VERSION);
+console.log('Geocoder v' + geocoder.getVersion());

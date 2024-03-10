@@ -41,9 +41,6 @@ I know it's a pitty to regress from the excellent tooling of this projets & I he
 
 I would be pleased to discuss cons/pro about this before converting sass files to css.
 
-*** *** *** *** *** *** *** *** *** ***
-//TODO BUG Geocoder : bouton envoi trop a gauche sur Android (ex: chemineur)
-
 
 *** *** *** *** *** *** *** *** *** ***
 NPM delivery
@@ -96,11 +93,12 @@ Publish release
 npm publish --access public
 
 
-//TODO
-Afficher version / délivrer dans l'interface
-Clarifier livraison sources dans npm / Add zip in version github
-tests / compléter
--((win, doc) => {
+*** *** *** *** *** *** *** *** *** ***
+//TODO BUG Geocoder : send button too far to the left on Android (ex: chemineur)
+//TODO simplify sources delivery in npm / Add zip in github version
+//TODO tests test:providers KO
+//TODO tests test:unit KO
+//BEST tests: delete -((win, doc) => {
 
 SASS
 - New language to learn to maintain

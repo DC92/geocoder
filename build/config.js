@@ -2,13 +2,15 @@ import {
   readFileSync
 } from 'fs';
 import nodeResolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import css from 'rollup-plugin-import-css'; // Collect .css imports in .js modules
+import commonjs from '@rollup/plugin-commonjs'; // Convert CommonJS module into ES module
+import css from 'rollup-plugin-import-css'; // Collect css
 import json from '@rollup/plugin-json';
+import replace from '@rollup/plugin-replace'; // To include the version in the distribution
 import terser from '@rollup/plugin-terser'; // Rollup plugin to minify generated es bundle
 
 const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
-const external = Object.keys(pkg.dependencies);
+const timeBuild = new Date().toLocaleString();
+const external = Object.keys(pkg.dependencies); // To import external ref (ol...)
 const globals = {};
 
 const openlayers = [
@@ -32,19 +34,11 @@ const banner = readFileSync('./build/banner.js', 'utf-8')
   .replace('{description}', pkg.description)
   .replace('{homepage}', pkg.homepage)
   .replace('{version}', pkg.version)
-  .replace('{time}', new Date().toLocaleString());
+  .replace('{time}', timeBuild);
 
 export default [{
     external,
     input: './build/geocoder.js',
-    output: {
-      banner,
-      globals,
-      file: './dist/ol-geocoder.js',
-      sourcemap: true,
-      format: 'umd',
-      name: 'Geocoder',
-    },
     plugins: [
       nodeResolve(),
       commonjs({
@@ -56,24 +50,28 @@ export default [{
       json({
         exclude: 'node_modules/**'
       }),
+      replace({
+        preventAssignment: true,
+        __buildDate__: timeBuild,
+        __buildVersion__: pkg.version,
+      }),
       terser({
         output: {
-          comments: /^!/
+          comments: /^!/ // To keep @license
         }
       }),
     ],
-  },
-  {
-    external,
-    input: './build/geocoder.js',
     output: {
       banner,
       globals,
-      file: './dist/ol-geocoder-debug.js',
+      file: './dist/ol-geocoder.js',
       sourcemap: true,
       format: 'umd',
       name: 'Geocoder',
     },
+  },
+  {
+    external,
     plugins: [
       nodeResolve(),
       commonjs({
@@ -86,6 +84,20 @@ export default [{
       json({
         exclude: 'node_modules/**'
       }),
+      replace({
+        preventAssignment: true,
+        __buildDate__: timeBuild,
+        __buildVersion__: pkg.version,
+      }),
     ],
+    input: './build/geocoder.js',
+    output: {
+      banner,
+      globals,
+      file: './dist/ol-geocoder-debug.js',
+      sourcemap: true,
+      format: 'umd',
+      name: 'Geocoder',
+    },
   },
 ];

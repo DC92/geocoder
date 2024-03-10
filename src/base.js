@@ -101,4 +101,11 @@ export default class Base extends Control {
   setProviderKey(key) {
     this.options.key = key;
   }
+
+  /**
+   * @return {String} Returns the version & build date
+   */
+  getVersion() {
+    return '__buildVersion__ __buildDate__';
+  }
 }
