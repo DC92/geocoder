@@ -37,23 +37,61 @@ const banner = readFileSync('./build/banner.js', 'utf-8')
   .replace('{time}', timeBuild);
 
 export default [{
+    // Full debug library
     external,
     input: './build/geocoder.js',
+    output: {
+      file: './dist/ol-geocoder-debug.js',
+      name: 'Geocoder',
+      banner,
+      globals,
+      format: 'umd',
+      sourcemap: true,
+    },
     plugins: [
       nodeResolve(),
       commonjs({
         include: 'node_modules/**',
-      }),
-      css({
-        output: 'ol-geocoder.css',
       }),
       json({
         exclude: 'node_modules/**'
       }),
       replace({
         preventAssignment: true,
-        __buildDate__: timeBuild,
-        __buildVersion__: pkg.version,
+        __geocoderBuildVersion__: pkg.version,
+      }),
+      css({
+        output: 'ol-geocoder.css',
+      }),
+    ],
+  },
+  {
+    // Compressed library
+    external,
+    input: './build/geocoder.js',
+    output: {
+      file: './dist/ol-geocoder.js',
+      name: 'Geocoder',
+      banner,
+      globals,
+      format: 'umd',
+      sourcemap: true,
+    },
+    plugins: [
+      nodeResolve(),
+      commonjs({
+        include: 'node_modules/**',
+      }),
+      json({
+        exclude: 'node_modules/**'
+      }),
+      replace({
+        preventAssignment: true,
+        __geocoderBuildVersion__: pkg.version,
+      }),
+      css({
+        output: 'ol-geocoder.min.css',
+        minify: true,
       }),
       terser({
         output: {
@@ -61,43 +99,5 @@ export default [{
         }
       }),
     ],
-    output: {
-      banner,
-      globals,
-      file: './dist/ol-geocoder.js',
-      sourcemap: true,
-      format: 'umd',
-      name: 'Geocoder',
-    },
-  },
-  {
-    external,
-    plugins: [
-      nodeResolve(),
-      commonjs({
-        include: 'node_modules/**',
-      }),
-      css({
-        minify: true,
-        output: 'ol-geocoder.min.css',
-      }),
-      json({
-        exclude: 'node_modules/**'
-      }),
-      replace({
-        preventAssignment: true,
-        __buildDate__: timeBuild,
-        __buildVersion__: pkg.version,
-      }),
-    ],
-    input: './build/geocoder.js',
-    output: {
-      banner,
-      globals,
-      file: './dist/ol-geocoder-debug.js',
-      sourcemap: true,
-      format: 'umd',
-      name: 'Geocoder',
-    },
   },
 ];

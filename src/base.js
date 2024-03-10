@@ -106,6 +106,6 @@ export default class Base extends Control {
    * @return {String} Returns the version & build date
    */
   getVersion() {
-    return '__buildVersion__ __buildDate__';
+    return '__geocoderBuildVersion__';
   }
 }

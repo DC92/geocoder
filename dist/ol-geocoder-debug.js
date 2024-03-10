@@ -1,8 +1,8 @@
 /*
- * @myol/geocoder - v4.3.3-2
+ * @myol/geocoder - v4.3.3-3
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 10/03/2024 16:06:30
+ * Built: 10/03/2024 18:02:54
  */
  
  
@@ -1238,7 +1238,7 @@
      * @return {String} Returns the version & build date
      */
     getVersion() {
-      return '4.3.3-2 10/03/2024 16:06:30';
+      return '4.3.3-3';
     }
   }
 

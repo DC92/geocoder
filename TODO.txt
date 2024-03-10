@@ -1,3 +1,16 @@
+//TODO BUG ol-geocoder.js has no banner
+//TODO BUG Geocoder : send button too far to the left on Android (ex: chemineur)
+//TODO simplify sources delivery in npm / Add zip in github version
+//TODO tests test:providers KO
+//TODO tests test:unit KO
+//BEST tests: delete -((win, doc) => {
+
+Next délivery
+#283
+new embed cursor
+getVersion()
+
+*** *** *** *** *** *** *** *** *** ***
 TypeScript Typings, Exports #248
 Would be really nice if there were TypeScript Typings
 
@@ -94,12 +107,6 @@ npm publish --access public
 
 
 *** *** *** *** *** *** *** *** *** ***
-//TODO BUG Geocoder : send button too far to the left on Android (ex: chemineur)
-//TODO simplify sources delivery in npm / Add zip in github version
-//TODO tests test:providers KO
-//TODO tests test:unit KO
-//BEST tests: delete -((win, doc) => {
-
 SASS
 - New language to learn to maintain
 - Difficult to read (reference to konstant values may be wrong)
