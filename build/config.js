@@ -5,7 +5,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs'; // Convert CommonJS module into ES module
 import css from 'rollup-plugin-import-css'; // Collect css
 import json from '@rollup/plugin-json';
-import replace from '@rollup/plugin-replace'; // To include the version in the distribution
+import pluginReplace from '@rollup/plugin-replace'; // To include the version in the distribution
 import terser from '@rollup/plugin-terser'; // Rollup plugin to minify generated es bundle
 
 const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
@@ -37,35 +37,6 @@ const banner = readFileSync('./build/banner.js', 'utf-8')
   .replace('{time}', timeBuild);
 
 export default [{
-    // Full debug library
-    external,
-    input: './build/geocoder.js',
-    output: {
-      file: './dist/ol-geocoder-debug.js',
-      name: 'Geocoder',
-      banner,
-      globals,
-      format: 'umd',
-      sourcemap: true,
-    },
-    plugins: [
-      nodeResolve(),
-      commonjs({
-        include: 'node_modules/**',
-      }),
-      json({
-        exclude: 'node_modules/**'
-      }),
-      replace({
-        preventAssignment: true,
-        __geocoderBuildVersion__: pkg.version,
-      }),
-      css({
-        output: 'ol-geocoder.css',
-      }),
-    ],
-  },
-  {
     // Compressed library
     external,
     input: './build/geocoder.js',
@@ -85,7 +56,7 @@ export default [{
       json({
         exclude: 'node_modules/**'
       }),
-      replace({
+      pluginReplace({
         preventAssignment: true,
         __geocoderBuildVersion__: pkg.version,
       }),
@@ -95,8 +66,37 @@ export default [{
       }),
       terser({
         output: {
-          comments: /^!/ // To keep @license
+          comments: /^!/
         }
+      }),
+    ],
+  },
+  {
+    // Full debug library
+    external,
+    input: './build/geocoder.js',
+    output: {
+      file: './dist/ol-geocoder-debug.js',
+      name: 'Geocoder',
+      banner,
+      globals,
+      format: 'umd',
+      sourcemap: true,
+    },
+    plugins: [
+      nodeResolve(),
+      commonjs({
+        include: 'node_modules/**',
+      }),
+      json({
+        exclude: 'node_modules/**'
+      }),
+      pluginReplace({
+        preventAssignment: true,
+        __geocoderBuildVersion__: pkg.version,
+      }),
+      css({
+        output: 'ol-geocoder.css',
       }),
     ],
   },
