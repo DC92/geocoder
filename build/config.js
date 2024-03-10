@@ -54,7 +54,7 @@ export default [{
         include: 'node_modules/**',
       }),
       json({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
       }),
       pluginReplace({
         preventAssignment: true,
@@ -66,7 +66,7 @@ export default [{
       }),
       terser({
         output: {
-          comments: /^!/
+          comments: /^!/,
         }
       }),
     ],
@@ -89,7 +89,7 @@ export default [{
         include: 'node_modules/**',
       }),
       json({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
       }),
       pluginReplace({
         preventAssignment: true,
