@@ -8,7 +8,7 @@ export default class OpenStreet {
   constructor(options) {
     this.settings = {
       url: 'https://nominatim.openstreetmap.org/search',
-      ...options, // Allow custom URL for osm provider
+      ...options, // #266 Allow custom URL for osm provider
       params: {
         q: '',
         format: 'json',
@@ -31,7 +31,7 @@ export default class OpenStreet {
         addressdetails: this.settings.params.addressdetails,
         limit: opt.limit || this.settings.params.limit,
         countrycodes: opt.countrycodes || this.settings.params.countrycodes,
-        viewbox: opt.viewbox || this.settings.params.viewbox,
+        viewbox: opt.viewbox || this.settings.params.viewbox, // #260
         'accept-language': opt.lang || this.settings.params['accept-language'],
       },
     };

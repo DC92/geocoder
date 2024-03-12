@@ -92,6 +92,7 @@
 }
 
 .ol-geocoder .gcd-gl-btn:after {
+  /* // #102 */
   content: "\1F50D";
 }
 
@@ -228,6 +229,7 @@
 }
 
 .ol-geocoder .gcd-txt-glass:after {
+  /* // #102 */
   content: "\1F50D";
 }
 

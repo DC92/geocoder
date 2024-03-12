@@ -55,5 +55,5 @@ new ol.Map({
   ],
 });
 
-console.log('Openlayers v' + ol.util.VERSION);
-console.log('Geocoder v' + geocoder.getVersion());
+console.log('Openlayers ' + ol.util.VERSION);
+console.log('Geocoder ' + geocoder.getVersion());

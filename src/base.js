@@ -5,6 +5,7 @@ import Icon from 'ol/style/Icon';
 import {
   CONTROL_TYPE,
   DEFAULT_OPTIONS,
+  FEATURE_SRC,
 } from './konstants';
 
 import Html from './html';
@@ -23,30 +24,14 @@ export default class Base extends Control {
    * @param {string} type nominatim|reverse.
    * @param {object} options Options.
    */
-  constructor(type = CONTROL_TYPE.NOMINATIM, opt) {
+  constructor(type = CONTROL_TYPE.NOMINATIM, options = {}) {
     assert(typeof type === 'string', '@param `type` should be string!');
     assert(
       type === CONTROL_TYPE.NOMINATIM || type === CONTROL_TYPE.REVERSE,
       `@param 'type' should be '${CONTROL_TYPE.NOMINATIM}'
       or '${CONTROL_TYPE.REVERSE}'!`
     );
-    const options = {
-      ...DEFAULT_OPTIONS,
-      featureStyle: [
-        new Style({
-          image: new Icon({
-            anchor: [0.5, 1],
-            src: 'data:image/svg+xml;charset=utf-8,' +
-              '<svg width="26" height="42" viewBox="0 0 26 42" xmlns="http://www.w3.org/2000/svg">' +
-              '<polygon points="1,18 14,42 25,18" fill="rgb(75,75,75)" />' +
-              '<ellipse cx="13" cy="13" rx="13" ry="13" fill="rgb(75,75,75)" />' +
-              '<ellipse cx="13" cy="14" rx="6" ry="6" fill="yellow" />' +
-              '</svg>',
-          })
-        }),
-      ],
-      ...opt,
-    };
+    assert(typeof options === 'object', '@param `options` should be object!');
 
     let container;
     let $nominatim;
@@ -61,10 +46,19 @@ export default class Base extends Control {
       ...options, // Allows to add ol.control.Control options (as target:)
     });
 
-    if (!(this instanceof Base)) return new Base();
-
-    this.options = options;
     this.container = container;
+    this.options = {
+      ...DEFAULT_OPTIONS,
+      featureStyle: [
+        new Style({
+          image: new Icon({
+            anchor: [0.5, 1],
+            src: FEATURE_SRC,
+          })
+        }),
+      ],
+      ...options,
+    };
 
     if (type === CONTROL_TYPE.NOMINATIM) {
       $nominatim = new Nominatim(this, $html.els);

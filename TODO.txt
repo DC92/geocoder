@@ -1,8 +1,7 @@
-//TODO BUG ol-geocoder.js has no banner
+//TODO tests test:providers mapquest KO / internet error
+//TODO tests manually each provider
 //TODO BUG Geocoder : send button too far to the left on Android (ex: chemineur)
-//TODO simplify sources delivery in npm / Add zip in github version
-//TODO tests test:providers KO
-//TODO tests test:unit KO
+//TODO Add dist zip in github version
 //BEST tests: delete -((win, doc) => {
 
 *** *** *** *** *** *** *** *** *** ***
@@ -82,8 +81,6 @@ package.json
   "description": "A geocoder extension compatible with OpenLayers v6.x to 9.0.0",
 remove
     "src",
-
-gen : a ?????????????????????
 
 github commit
 Bump to v4.3.2

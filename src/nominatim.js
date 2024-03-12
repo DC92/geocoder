@@ -8,7 +8,7 @@ import {
   VARS,
   TARGET_TYPE,
   PROVIDERS,
-  EVENT_TYPE
+  EVENT_TYPE,
 } from './konstants';
 import {
   hasClass,
@@ -19,10 +19,10 @@ import {
   removeAllChildren,
 } from './helpers/dom';
 import {
-  randomId
+  randomId,
 } from './helpers/mix';
 import {
-  json
+  json,
 } from './helpers/ajax';
 
 import Photon from './providers/photon';
@@ -46,10 +46,10 @@ export default class Nominatim {
 
     this.layerName = randomId('geocoder-layer-');
     this.layer = new LayerVector({
-      background: 'transparent',
+      background: 'transparent', // #282
       name: this.layerName,
       source: new SourceVector(),
-      displayInLayerSwitcher: false, // Remove search layer from legend
+      displayInLayerSwitcher: false, // #256 Remove search layer from legend
     });
 
     this.options = base.options;
@@ -91,7 +91,7 @@ export default class Nominatim {
       }
     };
     const stopBubbling = (evt) => evt.stopPropagation();
-    const search = () => {
+    const search = () => { // #255
       this.els.input.focus();
       this.query(this.els.input.value);
     };
@@ -184,6 +184,7 @@ export default class Nominatim {
       }
 
       if (response.length == 1) {
+        // #206 Direct access if options.limit: 1
         this.chosen(row, addressHtml, row.address, row.original);
       } else {
         const li = createElement('li', `<a href="#">${addressHtml}</a>`);
@@ -214,8 +215,8 @@ export default class Nominatim {
 
     if (bbox) {
       bbox = proj.transformExtent(
-        // https://nominatim.org/release-docs/latest/api/Output/#boundingbox
-        // Requires parseFloat on negative bbox entries
+        // #274 https://nominatim.org/release-docs/latest/api/Output/#boundingbox
+        // requires parseFloat on negative bbox entries
         [parseFloat(bbox[2]), parseFloat(bbox[0]), parseFloat(bbox[3]), parseFloat(bbox[1])], // SNWE -> WSEN
         'EPSG:4326',
         projection
@@ -230,6 +231,7 @@ export default class Nominatim {
 
     this.options.keepOpen === false && this.clearResults(true);
 
+    // #239
     if (this.options.preventDefault === true || this.options.preventMarker === true) {
       // No display change
       this.Base.dispatchEvent({
@@ -253,6 +255,7 @@ export default class Nominatim {
       });
     }
 
+    // #239
     if (this.options.preventDefault !== true && this.options.preventPanning !== true) {
       // Move & zoom to the position
       if (bbox) {
@@ -262,7 +265,7 @@ export default class Nominatim {
       } else {
         map.getView().animate({
           center: coord,
-          // ol-geocoder results are too much zoomed -in Dominique92/ol-geocoder#235
+          // #235 ol-geocoder results are too much zoomed -in
           resolution: this.options.defaultFlyResolution,
           duration: 500,
         });

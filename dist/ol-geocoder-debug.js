@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.3.3-4-dev
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 10/03/2024 21:37:31
+ * Built: 12/03/2024 19:47:32
  */
 
 (function (global, factory) {
@@ -108,6 +108,13 @@
     GLASS: 'glass-button',
     INPUT: 'text-input',
   };
+
+  const FEATURE_SRC = 'data:image/svg+xml;charset=utf-8,' +
+    '<svg width="26" height="42" viewBox="0 0 26 42" xmlns="http://www.w3.org/2000/svg">' +
+    '<polygon points="1,18 14,42 25,18" fill="rgb(75,75,75)" />' +
+    '<ellipse cx="13" cy="13" rx="13" ry="13" fill="rgb(75,75,75)" />' +
+    '<ellipse cx="13" cy="14" rx="6" ry="6" fill="yellow" />' +
+    '</svg>';
 
   const PROVIDERS = {
     OSM: 'osm',
@@ -355,7 +362,7 @@
         elements = {
           container,
           control: container.querySelector(`.${klasses$1.inputText.control}`),
-          label: container.querySelector(`.${klasses$1.inputText.label}`),
+          label: container.querySelector(`.${klasses$1.inputText.label}`), // #198
           input: container.querySelector(`.${klasses$1.inputText.input}`),
           search: container.querySelector(`.${klasses$1.inputText.search}`),
           result: container.querySelector(`.${klasses$1.inputText.result}`),
@@ -552,7 +559,7 @@
     constructor(options) {
       this.settings = {
         url: 'https://nominatim.openstreetmap.org/search',
-        ...options, // Allow custom URL for osm provider
+        ...options, // #266 Allow custom URL for osm provider
         params: {
           q: '',
           format: 'json',
@@ -575,7 +582,7 @@
           addressdetails: this.settings.params.addressdetails,
           limit: opt.limit || this.settings.params.limit,
           countrycodes: opt.countrycodes || this.settings.params.countrycodes,
-          viewbox: opt.viewbox || this.settings.params.viewbox,
+          viewbox: opt.viewbox || this.settings.params.viewbox, // #260
           'accept-language': opt.lang || this.settings.params['accept-language'],
         },
       };
@@ -805,10 +812,10 @@
 
       this.layerName = randomId('geocoder-layer-');
       this.layer = new LayerVector__default["default"]({
-        background: 'transparent',
+        background: 'transparent', // #282
         name: this.layerName,
         source: new SourceVector__default["default"](),
-        displayInLayerSwitcher: false, // Remove search layer from legend
+        displayInLayerSwitcher: false, // #256 Remove search layer from legend
       });
 
       this.options = base.options;
@@ -850,7 +857,7 @@
         }
       };
       const stopBubbling = (evt) => evt.stopPropagation();
-      const search = () => {
+      const search = () => { // #255
         this.els.input.focus();
         this.query(this.els.input.value);
       };
@@ -943,6 +950,7 @@
         }
 
         if (response.length == 1) {
+          // #206 Direct access if options.limit: 1
           this.chosen(row, addressHtml, row.address, row.original);
         } else {
           const li = createElement('li', `<a href="#">${addressHtml}</a>`);
@@ -973,8 +981,8 @@
 
       if (bbox) {
         bbox = proj__namespace.transformExtent(
-          // https://nominatim.org/release-docs/latest/api/Output/#boundingbox
-          // Requires parseFloat on negative bbox entries
+          // #274 https://nominatim.org/release-docs/latest/api/Output/#boundingbox
+          // requires parseFloat on negative bbox entries
           [parseFloat(bbox[2]), parseFloat(bbox[0]), parseFloat(bbox[3]), parseFloat(bbox[1])], // SNWE -> WSEN
           'EPSG:4326',
           projection
@@ -989,6 +997,7 @@
 
       this.options.keepOpen === false && this.clearResults(true);
 
+      // #239
       if (this.options.preventDefault === true || this.options.preventMarker === true) {
         // No display change
         this.Base.dispatchEvent({
@@ -1012,6 +1021,7 @@
         });
       }
 
+      // #239
       if (this.options.preventDefault !== true && this.options.preventPanning !== true) {
         // Move & zoom to the position
         if (bbox) {
@@ -1021,7 +1031,7 @@
         } else {
           map.getView().animate({
             center: coord,
-            // ol-geocoder results are too much zoomed -in Dominique92/ol-geocoder#235
+            // #235 ol-geocoder results are too much zoomed -in
             resolution: this.options.defaultFlyResolution,
             duration: 500,
           });
@@ -1154,30 +1164,14 @@
      * @param {string} type nominatim|reverse.
      * @param {object} options Options.
      */
-    constructor(type = CONTROL_TYPE.NOMINATIM, opt) {
+    constructor(type = CONTROL_TYPE.NOMINATIM, options = {}) {
       assert(typeof type === 'string', '@param `type` should be string!');
       assert(
         type === CONTROL_TYPE.NOMINATIM || type === CONTROL_TYPE.REVERSE,
         `@param 'type' should be '${CONTROL_TYPE.NOMINATIM}'
       or '${CONTROL_TYPE.REVERSE}'!`
       );
-      const options = {
-        ...DEFAULT_OPTIONS,
-        featureStyle: [
-          new Style__default["default"]({
-            image: new Icon__default["default"]({
-              anchor: [0.5, 1],
-              src: 'data:image/svg+xml;charset=utf-8,' +
-                '<svg width="26" height="42" viewBox="0 0 26 42" xmlns="http://www.w3.org/2000/svg">' +
-                '<polygon points="1,18 14,42 25,18" fill="rgb(75,75,75)" />' +
-                '<ellipse cx="13" cy="13" rx="13" ry="13" fill="rgb(75,75,75)" />' +
-                '<ellipse cx="13" cy="14" rx="6" ry="6" fill="yellow" />' +
-                '</svg>',
-            })
-          }),
-        ],
-        ...opt,
-      };
+      assert(typeof options === 'object', '@param `options` should be object!');
 
       let container;
       let $nominatim;
@@ -1192,10 +1186,19 @@
         ...options, // Allows to add ol.control.Control options (as target:)
       });
 
-      if (!(this instanceof Base)) return new Base();
-
-      this.options = options;
       this.container = container;
+      this.options = {
+        ...DEFAULT_OPTIONS,
+        featureStyle: [
+          new Style__default["default"]({
+            image: new Icon__default["default"]({
+              anchor: [0.5, 1],
+              src: FEATURE_SRC,
+            })
+          }),
+        ],
+        ...options,
+      };
 
       if (type === CONTROL_TYPE.NOMINATIM) {
         $nominatim = new Nominatim(this, $html.els);
