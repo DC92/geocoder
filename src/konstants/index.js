@@ -24,11 +24,19 @@ export const FEATURE_SRC = 'data:image/svg+xml;charset=utf-8,' +
   '</svg>';
 
 export const PROVIDERS = {
-  OSM: 'osm',
-  MAPQUEST: 'mapquest',
-  PHOTON: 'photon',
   BING: 'bing',
+  MAPQUEST: 'mapquest',
   OPENCAGE: 'opencage',
+  OSM: 'osm',
+  PHOTON: 'photon',
+};
+
+export const APIS = {
+  BING: 'https://dev.virtualearth.net/REST/v1/Locations',
+  MAPQUEST: 'https://nominatim.openstreetmap.org/search',
+  OPENCAGE: 'https://api.opencagedata.com/geocode/v1/json?',
+  OSM: 'https://nominatim.openstreetmap.org/search',
+  PHOTON: 'https://photon.komoot.io/api/',
 };
 
 export const DEFAULT_OPTIONS = {

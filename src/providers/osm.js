@@ -1,3 +1,7 @@
+import {
+  APIS,
+} from '../konstants';
+
 /**
  * @class OpenStreet
  */
@@ -7,7 +11,7 @@ export default class OpenStreet {
    */
   constructor(options) {
     this.settings = {
-      url: 'https://nominatim.openstreetmap.org/search',
+      url: APIS.OSM,
       ...options, // #266 Allow custom URL for osm provider
       params: {
         q: '',

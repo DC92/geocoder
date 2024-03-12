@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.3.3-4-dev
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 12/03/2024 19:47:32
+ * Built: 12/03/2024 20:25:45
  */
 
 (function (global, factory) {
@@ -117,11 +117,19 @@
     '</svg>';
 
   const PROVIDERS = {
-    OSM: 'osm',
-    MAPQUEST: 'mapquest',
-    PHOTON: 'photon',
     BING: 'bing',
+    MAPQUEST: 'mapquest',
     OPENCAGE: 'opencage',
+    OSM: 'osm',
+    PHOTON: 'photon',
+  };
+
+  const APIS = {
+    BING: 'https://dev.virtualearth.net/REST/v1/Locations',
+    MAPQUEST: 'https://nominatim.openstreetmap.org/search',
+    OPENCAGE: 'https://api.opencagedata.com/geocode/v1/json?',
+    OSM: 'https://nominatim.openstreetmap.org/search',
+    PHOTON: 'https://photon.komoot.io/api/',
   };
 
   const DEFAULT_OPTIONS = {
@@ -499,7 +507,7 @@
      */
     constructor() {
       this.settings = {
-        url: 'https://photon.komoot.io/api/',
+        url: APIS.PHOTON,
 
         params: {
           q: '',
@@ -558,7 +566,7 @@
      */
     constructor(options) {
       this.settings = {
-        url: 'https://nominatim.openstreetmap.org/search',
+        url: APIS.OSM,
         ...options, // #266 Allow custom URL for osm provider
         params: {
           q: '',
@@ -623,7 +631,7 @@
      */
     constructor() {
       this.settings = {
-        url: 'https://open.mapquestapi.com/nominatim/v1/search.php',
+        url: APIS.MAPQUEST,
 
         params: {
           q: '',
@@ -687,7 +695,7 @@
      */
     constructor() {
       this.settings = {
-        url: 'https://dev.virtualearth.net/REST/v1/Locations',
+        url: APIS.BING,
         callbackName: 'jsonp',
 
         params: {
@@ -747,7 +755,7 @@
      */
     constructor() {
       this.settings = {
-        url: 'https://api.opencagedata.com/geocode/v1/json?',
+        url: APIS.OPENCAGE,
 
         params: {
           q: '',

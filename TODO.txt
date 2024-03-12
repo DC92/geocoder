@@ -1,15 +1,17 @@
-//TODO tests test:providers mapquest KO / internet error
-//TODO tests manually each provider
+//TODO manual test opencage & photon
+//TODO automatic tests all 5 providers
 //TODO BUG Geocoder : send button too far to the left on Android (ex: chemineur)
-//TODO Add dist zip in github version
+//BEST Add dist zip in github version
 //BEST tests: delete -((win, doc) => {
 
 *** *** *** *** *** *** *** *** *** ***
-NEXT DÉLIVERY
+NEXT DELIVERY
 #283
-new embed cursor
+## new embed cursor
 getVersion()
 banner on compressed library
+## mapquest api obsolescence
+all tests OK
 
 *** *** *** *** *** *** *** *** *** ***
 TypeScript Typings, Exports #248
