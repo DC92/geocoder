@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.3.3-4-dev
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 12/03/2024 20:25:45
+ * Built: 14/03/2024 10:17:59
  */
 
 (function (global, factory) {
@@ -11,10 +11,7 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Geocoder = factory(global.ol.control.Control, global.ol.style.Style, global.ol.style.Icon, global.ol.layer.Vector, global.ol.source.Vector, global.ol.geom.Point, global.ol.Feature, global.ol.proj));
 })(this, (function (Control, Style, Icon, LayerVector, SourceVector, Point, Feature, proj) { 'use strict';
 
-  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-  function _interopNamespace(e) {
-    if (e && e.__esModule) return e;
+  function _interopNamespaceDefault(e) {
     var n = Object.create(null);
     if (e) {
       Object.keys(e).forEach(function (k) {
@@ -27,18 +24,11 @@
         }
       });
     }
-    n["default"] = e;
+    n.default = e;
     return Object.freeze(n);
   }
 
-  var Control__default = /*#__PURE__*/_interopDefaultLegacy(Control);
-  var Style__default = /*#__PURE__*/_interopDefaultLegacy(Style);
-  var Icon__default = /*#__PURE__*/_interopDefaultLegacy(Icon);
-  var LayerVector__default = /*#__PURE__*/_interopDefaultLegacy(LayerVector);
-  var SourceVector__default = /*#__PURE__*/_interopDefaultLegacy(SourceVector);
-  var Point__default = /*#__PURE__*/_interopDefaultLegacy(Point);
-  var Feature__default = /*#__PURE__*/_interopDefaultLegacy(Feature);
-  var proj__namespace = /*#__PURE__*/_interopNamespace(proj);
+  var proj__namespace = /*#__PURE__*/_interopNamespaceDefault(proj);
 
   var containerId = "gcd-container";
   var buttonControlId = "gcd-button-control";
@@ -84,13 +74,13 @@
 
   var _VARS_ = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    containerId: containerId,
     buttonControlId: buttonControlId,
-    inputQueryId: inputQueryId,
-    inputLabelId: inputLabelId,
-    inputSearchId: inputSearchId,
+    containerId: containerId,
     cssClasses: cssClasses,
-    'default': vars
+    default: vars,
+    inputLabelId: inputLabelId,
+    inputQueryId: inputQueryId,
+    inputSearchId: inputSearchId
   });
 
   const VARS = _VARS_;
@@ -819,10 +809,10 @@
       this.Base = base;
 
       this.layerName = randomId('geocoder-layer-');
-      this.layer = new LayerVector__default["default"]({
+      this.layer = new LayerVector({
         background: 'transparent', // #282
         name: this.layerName,
-        source: new SourceVector__default["default"](),
+        source: new SourceVector(),
         displayInLayerSwitcher: false, // #256 Remove search layer from legend
       });
 
@@ -1048,7 +1038,7 @@
     }
 
     createFeature(coord) {
-      const feature = new Feature__default["default"](new Point__default["default"](coord));
+      const feature = new Feature(new Point(coord));
 
       this.addLayer();
       feature.setStyle(this.options.featureStyle);
@@ -1166,7 +1156,7 @@
    * @class Base
    * @extends {ol.control.Control}
    */
-  class Base extends Control__default["default"] {
+  class Base extends Control {
     /**
      * @constructor
      * @param {string} type nominatim|reverse.
@@ -1198,8 +1188,8 @@
       this.options = {
         ...DEFAULT_OPTIONS,
         featureStyle: [
-          new Style__default["default"]({
-            image: new Icon__default["default"]({
+          new Style({
+            image: new Icon({
               anchor: [0.5, 1],
               src: FEATURE_SRC,
             })
