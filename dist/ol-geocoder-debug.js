@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.3.3-4-dev
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 14/03/2024 10:17:59
+ * Built: 14/03/2024 20:23:16
  */
 
 (function (global, factory) {
@@ -104,7 +104,7 @@
     '<polygon points="1,18 14,42 25,18" fill="rgb(75,75,75)" />' +
     '<ellipse cx="13" cy="13" rx="13" ry="13" fill="rgb(75,75,75)" />' +
     '<ellipse cx="13" cy="14" rx="6" ry="6" fill="yellow" />' +
-    '</svg>';
+    '</svg>'; // #285
 
   const PROVIDERS = {
     BING: 'bing',
@@ -116,7 +116,7 @@
 
   const APIS = {
     BING: 'https://dev.virtualearth.net/REST/v1/Locations',
-    MAPQUEST: 'https://nominatim.openstreetmap.org/search',
+    MAPQUEST: 'https://nominatim.openstreetmap.org/search', // #286
     OPENCAGE: 'https://api.opencagedata.com/geocode/v1/json?',
     OSM: 'https://nominatim.openstreetmap.org/search',
     PHOTON: 'https://photon.komoot.io/api/',
@@ -826,7 +826,6 @@
       this.provider = this.newProvider();
 
       this.els = els;
-      this.lastQuery = '';
       this.container = this.els.container;
       this.registeredListeners = {
         mapClick: false,
@@ -892,10 +891,7 @@
         limit: this.options.limit,
       });
 
-      if (this.lastQuery === q && this.els.result.firstChild) return;
-
-      this.lastQuery = q;
-      this.clearResults();
+      this.clearResults(this.options.keepOpen === false); // #284
       addClass(this.els.search, klasses.spin);
 
       const ajax = {
@@ -993,7 +989,7 @@
         original: addressOriginal,
       };
 
-      this.options.keepOpen === false && this.clearResults(true);
+      this.clearResults(true); // #284
 
       // #239
       if (this.options.preventDefault === true || this.options.preventMarker === true) {
@@ -1104,7 +1100,7 @@
       this.els.input.blur();
       addClass(this.els.search, klasses.hidden);
       removeClass(this.els.control, klasses.glass.expanded);
-      this.clearResults();
+      removeAllChildren(this.els.result); // #284
     }
 
     listenMapClick() {
@@ -1120,7 +1116,6 @@
       mapElement.addEventListener(
         'click', {
           handleEvent(evt) {
-            that.clearResults(true);
             mapElement.removeEventListener(evt.type, this, false);
             that.registeredListeners.mapClick = false;
           },

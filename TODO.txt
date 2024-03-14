@@ -6,11 +6,13 @@
 
 *** *** *** *** *** *** *** *** *** ***
 NEXT DELIVERY
-#283
-## new embed cursor
+#283 SASS : Using / for division outside of calc() is deprecated
+
+#284 keepOpen flag not working for Submit Button
+#285 The marker is an external dependency
+#286 mapquest API change
 getVersion()
 banner on compressed library
-## mapquest api obsolescence
 all tests OK
 
 *** *** *** *** *** *** *** *** *** ***

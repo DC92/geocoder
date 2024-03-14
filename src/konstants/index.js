@@ -21,7 +21,7 @@ export const FEATURE_SRC = 'data:image/svg+xml;charset=utf-8,' +
   '<polygon points="1,18 14,42 25,18" fill="rgb(75,75,75)" />' +
   '<ellipse cx="13" cy="13" rx="13" ry="13" fill="rgb(75,75,75)" />' +
   '<ellipse cx="13" cy="14" rx="6" ry="6" fill="yellow" />' +
-  '</svg>';
+  '</svg>'; // #285
 
 export const PROVIDERS = {
   BING: 'bing',
@@ -33,7 +33,7 @@ export const PROVIDERS = {
 
 export const APIS = {
   BING: 'https://dev.virtualearth.net/REST/v1/Locations',
-  MAPQUEST: 'https://nominatim.openstreetmap.org/search',
+  MAPQUEST: 'https://nominatim.openstreetmap.org/search', // #286
   OPENCAGE: 'https://api.opencagedata.com/geocode/v1/json?',
   OSM: 'https://nominatim.openstreetmap.org/search',
   PHOTON: 'https://photon.komoot.io/api/',

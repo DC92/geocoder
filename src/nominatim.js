@@ -62,7 +62,6 @@ export default class Nominatim {
     this.provider = this.newProvider();
 
     this.els = els;
-    this.lastQuery = '';
     this.container = this.els.container;
     this.registeredListeners = {
       mapClick: false,
@@ -128,10 +127,7 @@ export default class Nominatim {
       limit: this.options.limit,
     });
 
-    if (this.lastQuery === q && this.els.result.firstChild) return;
-
-    this.lastQuery = q;
-    this.clearResults();
+    this.clearResults(this.options.keepOpen === false); // #284
     addClass(this.els.search, klasses.spin);
 
     const ajax = {
@@ -229,7 +225,7 @@ export default class Nominatim {
       original: addressOriginal,
     };
 
-    this.options.keepOpen === false && this.clearResults(true);
+    this.clearResults(true); // #284
 
     // #239
     if (this.options.preventDefault === true || this.options.preventMarker === true) {
@@ -340,7 +336,7 @@ export default class Nominatim {
     this.els.input.blur();
     addClass(this.els.search, klasses.hidden);
     removeClass(this.els.control, klasses.glass.expanded);
-    this.clearResults();
+    removeAllChildren(this.els.result); // #284
   }
 
   listenMapClick() {
@@ -356,7 +352,6 @@ export default class Nominatim {
     mapElement.addEventListener(
       'click', {
         handleEvent(evt) {
-          that.clearResults(true);
           mapElement.removeEventListener(evt.type, this, false);
           that.registeredListeners.mapClick = false;
         },
