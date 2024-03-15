@@ -212,7 +212,7 @@ export default class Nominatim {
     if (bbox) {
       bbox = proj.transformExtent(
         // #274 https://nominatim.org/release-docs/latest/api/Output/#boundingbox
-        // requires parseFloat on negative bbox entries
+        // Requires parseFloat on negative bbox entries
         [parseFloat(bbox[2]), parseFloat(bbox[0]), parseFloat(bbox[3]), parseFloat(bbox[1])], // SNWE -> WSEN
         'EPSG:4326',
         projection

@@ -1,8 +1,8 @@
-/*! OPENLAYERS CONTROL GEOCODER
- * @myol/geocoder - v4.3.3-4-dev
+/*! OpenLayers Control Geocoder
+ * @myol/geocoder - v4.3.3
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 14/03/2024 20:23:16
+ * Built: 15/03/2024 09:17:12
  */
 
 (function (global, factory) {
@@ -976,7 +976,7 @@
       if (bbox) {
         bbox = proj__namespace.transformExtent(
           // #274 https://nominatim.org/release-docs/latest/api/Output/#boundingbox
-          // requires parseFloat on negative bbox entries
+          // Requires parseFloat on negative bbox entries
           [parseFloat(bbox[2]), parseFloat(bbox[0]), parseFloat(bbox[3]), parseFloat(bbox[1])], // SNWE -> WSEN
           'EPSG:4326',
           projection
@@ -1185,7 +1185,7 @@
         featureStyle: [
           new Style({
             image: new Icon({
-              anchor: [0.5, 1],
+              anchor: [0.5, 1], // #285
               src: FEATURE_SRC,
             })
           }),
@@ -1233,7 +1233,7 @@
      * @return {String} Returns the version & build date
      */
     getVersion() {
-      return '4.3.3-4-dev';
+      return '4.3.3';
     }
   }
 

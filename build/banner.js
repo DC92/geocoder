@@ -1,4 +1,4 @@
-/*! OPENLAYERS CONTROL GEOCODER
+/*! OpenLayers Control Geocoder
  * {name} - v{version}
  * {description}
  * {homepage}

@@ -7,13 +7,64 @@
 *** *** *** *** *** *** *** *** *** ***
 NEXT DELIVERY
 #283 SASS : Using / for division outside of calc() is deprecated
-
-#284 keepOpen flag not working for Submit Button
-#285 The marker is an external dependency
-#286 mapquest API change
 getVersion()
 banner on compressed library
 all tests OK
+
+*** *** *** *** *** *** *** *** *** ***
+NPM delivery
+https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
+npm init --scope=@dom92
+npm adduser myol
+npm whoami
+npm publish --access public
+
+npm audit fix --force
+Remettre dependancies: {},
+beautify
+
+npm install
+npm run beautify > $null
+npm run lint:dom
+npm run build
+npx vite --force
+
+DELIVER A VERSION :
+
+package.json
+  "name": "ol-geocoder",
+  "version": "4.3.4",
+  "description": "A geocoder extension compatible with OpenLayers v6.x to 9.0",
+remove
+  "src",
+README.md
+  4.3.? => ++
+  ## What's new in 4.3.? ?
+  * [#000](https://github.com/Dominique92/ol-geocoder/issues/000) Bla bla
+
+
+github commit
+Bump to v4.3.4
+#000 bla bla...
+
+github / Releases
+https://github.com/Dominique92/ol-geocoder/releases
+Draft a new release
+Chose a tag
+v4.3.4 : Create a new tag
+Release title : v4.3.4
+Describe :
+#000 bla bla...
+
+Zip dist : ol-geocoder-4.3.4.zip
+Attach binaries by dropping them here or selecting them.
+Publish release
+
+npm publish --access public
+Close issues
+  Closed in https://github.com/Dominique92/ol-geocoder/releases/tag/v4.3.?
+github last DC92/geocoder
+
 
 *** *** *** *** *** *** *** *** *** ***
 TypeScript Typings, Exports #248
@@ -61,55 +112,6 @@ I would be pleased to discuss cons/pro about this before converting sass files t
 
 
 *** *** *** *** *** *** *** *** *** ***
-NPM delivery
-https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
-npm init --scope=@dom92
-npm adduser myol
-npm whoami
-npm publish --access public
-
-npm audit fix --force
-Remettre dependancies: {}.
-beautify
-
-npm install
-npm run beautify > $null
-npm run lint:dom
-npm run build
-npx vite --force
-
-DELIVER A VERSION :
-package.json
-  "name": "ol-geocoder",
-  "version": "4.3.2",
-  "description": "A geocoder extension compatible with OpenLayers v6.x to 9.0.0",
-remove
-    "src",
-
-github commit
-Bump to v4.3.2
-#279 Bump @babel/traverse from 7.22.17 to 7.23.2
-#280 Bump @adobe/css-tools from 4.3.1 to 4.3.2
-#282 Tile layer is hidden by the marker layer in Openlayers 9.0.0
-
-github
-Releases
-Draft a new release
-Chose a tag
-v4.3.2 : Create a new tag
-Release title : v4.3.2
-Describe :
-#279 Bump @babel/traverse from 7.22.17 to 7.23.2
-#280 Bump @adobe/css-tools from 4.3.1 to 4.3.2
-#282 Tile layer is hidden by the marker layer in Openlayers 9.0.0
-Zip dist : ol-geocoder-4.3.2.zip
-Attach binaries by dropping them here or selecting them.
-Publish release
-
-npm publish --access public
-
-
-*** *** *** *** *** *** *** *** *** ***
 SASS
 - New language to learn to maintain
 - Difficult to read (reference to konstant values may be wrong)
@@ -117,23 +119,3 @@ SASS
 - Use in vite
 - no CSS beautifier available or specific
 - Deliver as a module
-
-##### Import in a nodejs project
-```javascript
-// Import CSS and Javascript
-import '../dist/ol-geocoder.css';
-import Geocoder from '../src/base';
-
-const geocoder = new Geocoder('nominatim', {...});
-```
-See this [example](https://dominique92.github.io/ol-geocoder/examples/nodejs.html).
-
-npm init @eslint/config
-fichier .eslintrc.cjs
-  settings: {
-    react: {
-     version: "detect",
-    },
-  },
-npm i react
-npx eslint src/*/*.js
