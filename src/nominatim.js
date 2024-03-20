@@ -258,10 +258,17 @@ export default class Nominatim {
         map.getView().fit(bbox, {
           duration: 500,
         });
+      } else if (this.options.defaultFlyZoom) {
+        map.getView().animate({
+          center: coord,
+          // #235 ol-geocoder results are too much zoomed in
+          zoom: this.options.defaultFlyZoom,
+          duration: 500,
+        });
       } else {
         map.getView().animate({
           center: coord,
-          // #235 ol-geocoder results are too much zoomed -in
+          // #235 ol-geocoder results are too much zoomed in
           resolution: this.options.defaultFlyResolution,
           duration: 500,
         });

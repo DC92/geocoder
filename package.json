@@ -56,6 +56,7 @@
     "prettier": "latest",
     "rollup": "latest",
     "rollup-plugin-import-css": "latest",
-    "testcafe": "latest"
+    "testcafe": "latest",
+    "vite": "latest"
   }
 }

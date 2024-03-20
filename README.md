@@ -125,6 +125,7 @@ geocoder.on('addresschosen', (evt) => {
   * `preventPanning`       : `false`; When true, prevent panning, but create marker, when an address is chosen;
   * `preventMarker`        : `false`; When true, prevent creating marker, but provide panning, when an address is chosen;
   * `defaultFlyResolution` : `10`; (meters per pixel) resolution to fly to when only coords & not bbox is returned by the provider;
+  * `defaultFlyZoom`       : undefined; Zoom to fly to when only coords & not bbox is returned by the provider;
   * `target`               : `null`; html element to attach the selector to (outside the map);
   * `debug`                : `false`; If true logs provider's response;
 

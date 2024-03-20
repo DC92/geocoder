@@ -35,12 +35,12 @@
   geocoder.on('addresschosen', (evt) => {
     if (evt.bbox) {
       map.getView().fit(evt.bbox, {
-        duration: 500
+        duration: 500,
       });
     } else {
       map.getView().animate({
         zoom: 14,
-        center: evt.coordinate
+        center: evt.coordinate,
       });
     }
   });
@@ -52,7 +52,7 @@
    */
   function OsOpenNamesSearch(options) {
     const {
-      url
+      url,
     } = options;
 
     return {
