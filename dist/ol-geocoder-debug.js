@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.3.3
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 20/03/2024 20:32:22
+ * Built: 30/03/2024 21:30:17
  */
 
 (function (global, factory) {
@@ -1240,7 +1240,7 @@
      * @return {String} Returns the version & build date
      */
     getVersion() {
-      return '4.3.3';
+      return '4.3.3 30/03/2024 21:30:17';
     }
   }
 

@@ -58,7 +58,7 @@ export default [{
       }),
       pluginReplace({
         preventAssignment: true,
-        __geocoderBuildVersion__: pkg.version,
+        __geocoderBuildVersion__: pkg.version + ' ' + timeBuild,
       }),
       css({
         output: 'ol-geocoder.min.css',
@@ -93,7 +93,7 @@ export default [{
       }),
       pluginReplace({
         preventAssignment: true,
-        __geocoderBuildVersion__: pkg.version,
+        __geocoderBuildVersion__: pkg.version + ' ' + timeBuild,
       }),
       css({
         output: 'ol-geocoder.css',
