@@ -5,5 +5,5 @@ export default [{
     "no-unused-vars": "warn",
     "no-undef": "warn",
     "prefer-named-capture-group": "warn"
-  }
+  },
 }];
