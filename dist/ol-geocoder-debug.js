@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.3.3
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 30/03/2024 21:30:17
+ * Built: 26/04/2024 19:57:37
  */
 
 (function (global, factory) {
@@ -138,6 +138,8 @@
     debug: false,
   };
 
+  /* global window, performance */
+
   function assert(condition, message = 'Assertion failed') {
     if (!condition) {
       if (typeof Error !== 'undefined') throw new Error(message);
@@ -178,7 +180,8 @@
     return /^\d+$/u.test(str);
   }
 
-  /* eslint-disable prefer-named-capture-group */
+  /* global window, document, HTMLElement */
+
 
   /**
    * @param {Element|Array<Element>} element DOM node or array of nodes.
@@ -410,6 +413,8 @@
   </div>
   <ul class="${klasses$1.inputText.result}"></ul>
 `;
+
+  /* global window, document, fetch, setTimeout */
 
   function json(obj) {
     return new Promise((resolve, reject) => {
@@ -795,6 +800,9 @@
     }
   }
 
+  /* global window, console */
+
+
   const klasses = VARS.cssClasses;
 
   /**
@@ -906,7 +914,6 @@
 
       json(ajax)
         .then((res) => {
-          // eslint-disable-next-line no-console
           this.options.debug && console.info(res);
 
           removeClass(this.els.search, klasses.spin);
@@ -1240,7 +1247,7 @@
      * @return {String} Returns the version & build date
      */
     getVersion() {
-      return '4.3.3 30/03/2024 21:30:17';
+      return '4.3.3 26/04/2024 19:57:37';
     }
   }
 

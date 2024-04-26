@@ -1,3 +1,5 @@
+/* global document */
+
 export function injectFile(file) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');

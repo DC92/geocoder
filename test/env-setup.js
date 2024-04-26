@@ -5,6 +5,9 @@
 // fixes from Paul Irish and Tino Zijdel
 
 // MIT license
+
+/* global window, require, clearTimeout */
+
 (() => {
   let lastTime = 0;
 
@@ -20,7 +23,7 @@
   }
 
   if (!window.requestAnimationFrame) {
-    window.requestAnimationFrame = (callback, element) => {
+    window.requestAnimationFrame = (callback) => {
       const currTime = new Date().getTime();
       const timeToCall = Math.max(0, 16 - (currTime - lastTime));
       const id = window.setTimeout(() => {

@@ -1,3 +1,5 @@
+/* global window, document, fetch, setTimeout */
+
 export function json(obj) {
   return new Promise((resolve, reject) => {
     const url = encodeUrlXhr(obj.url, obj.data);

@@ -1,3 +1,5 @@
+/* global window, document, ol, Geocoder */
+
 ((win, doc) => {
   const olview = new ol.View({
     center: [0, 0],

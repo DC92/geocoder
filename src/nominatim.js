@@ -1,3 +1,5 @@
+/* global window, console */
+
 import LayerVector from 'ol/layer/Vector';
 import SourceVector from 'ol/source/Vector';
 import Point from 'ol/geom/Point';
@@ -142,7 +144,6 @@ export default class Nominatim {
 
     json(ajax)
       .then((res) => {
-        // eslint-disable-next-line no-console
         this.options.debug && console.info(res);
 
         removeClass(this.els.search, klasses.spin);

@@ -1,3 +1,5 @@
+/* global window, document, HTMLElement */
+
 /* eslint-disable prefer-named-capture-group */
 import {
   isNumeric

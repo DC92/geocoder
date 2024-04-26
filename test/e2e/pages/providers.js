@@ -1,3 +1,5 @@
+/* global document, ol, Geocoder */
+
 const provider = document.querySelector('#provider');
 const key = document.querySelector('#key');
 

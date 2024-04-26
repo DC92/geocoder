@@ -1,10 +1,11 @@
+/* global fixture, test */
+
 import { TARGET_TYPE } from '../../../src/konstants';
 
 import Page from './page';
 
 const page = new Page(TARGET_TYPE.INPUT);
 
-// eslint-disable-next-line no-unused-expressions
 fixture`Control Type Glass`.page`../pages/control-input.html`;
 
 test('Searching', async (t) => {

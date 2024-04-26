@@ -1,3 +1,5 @@
+/* global Buffer, process, fixture, test */
+
 import '../../env';
 import { PROVIDERS } from '../../../konstants';
 
@@ -6,7 +8,6 @@ import Page from './page';
 const page = new Page();
 const key = Buffer.from(process.env.KEY_OPENCAGE, 'base64').toString('ascii');
 
-// eslint-disable-next-line no-unused-expressions
 fixture`Opencage`.page`../pages/providers.html`;
 
 test('Searching', async (t) => {

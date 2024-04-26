@@ -27,9 +27,9 @@
     "nominatim"
   ],
   "scripts": {
-    "beautify": "js-beautify -s=2 *.j* build/*co* examples/* src/*.*s src/*/*",
+    "beautify": "js-beautify -s=2 *.*js* build/*co* examples/* src/*.*s src/*/*",
     "build": "rollup -c build/config.js",
-    "lint": "npx eslint examples/*.js src/*.js src/*/*.js",
+    "lint": "npx eslint *.*js* build/*.js examples/*.js src/*.js src/*/*.js test/*.js test/*/*.js test/*/*/*.js",
     "test": "run-s build lint test:controls test:providers test:unit",
     "test:controls": "testcafe chrome test/e2e/controls/*.test.js",
     "test:providers": "testcafe chrome test/e2e/providers/*.test.js",

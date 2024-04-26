@@ -1,3 +1,5 @@
+/* global window, document, ol, Geocoder, console */
+
 // Instantiate with photon, little button
 const geocoderGlass = new Geocoder('nominatim');
 
