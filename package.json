@@ -33,7 +33,8 @@
     "test": "run-s build lint test:controls test:providers test:unit",
     "test:controls": "testcafe chrome test/e2e/controls/*.test.js",
     "test:providers": "testcafe chrome test/e2e/providers/*.test.js",
-    "test:unit": "jest"
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch"
   },
   "dependencies": {},
   "peerDependencies": {
