@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.3.3
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 26/04/2024 19:57:37
+ * Built: 01/05/2024 20:49:08
  */
 
 (function (global, factory) {
@@ -176,10 +176,6 @@
     return prefix ? prefix + id : id;
   }
 
-  function isNumeric(str) {
-    return /^\d+$/u.test(str);
-  }
-
   /* global window, document, HTMLElement */
 
 
@@ -202,7 +198,7 @@
 
     while (i--) {
       if (!hasClass(element, array[i])) {
-        _addClass(element, array[i], timeout);
+        _addClass(element, array[i]);
       }
     }
   }
@@ -215,7 +211,7 @@
    */
   function removeClass(element, classname, timeout) {
     if (Array.isArray(element)) {
-      element.forEach((each) => removeClass(each, classname, timeout));
+      element.forEach((each) => removeClass(each, classname));
 
       return;
     }
@@ -226,7 +222,7 @@
 
     while (i--) {
       if (hasClass(element, array[i])) {
-        _removeClass(element, array[i], timeout);
+        _removeClass(element, array[i]);
       }
     }
   }
@@ -313,10 +309,6 @@
     } else {
       el.className = `${el.className} ${klass}`.trim();
     }
-
-    if (timeout && isNumeric(timeout)) {
-      window.setTimeout(() => _removeClass(el, klass), timeout);
-    }
   }
 
   function _removeClass(el, klass, timeout) {
@@ -324,10 +316,6 @@
       el.classList.remove(klass);
     } else {
       el.className = el.className.replace(classRegex(klass), ' ').trim();
-    }
-
-    if (timeout && isNumeric(timeout)) {
-      window.setTimeout(() => _addClass(el, klass), timeout);
     }
   }
 
@@ -1247,7 +1235,7 @@
      * @return {String} Returns the version & build date
      */
     getVersion() {
-      return '4.3.3 26/04/2024 19:57:37';
+      return '4.3.3 01/05/2024 20:49:08';
     }
   }
 

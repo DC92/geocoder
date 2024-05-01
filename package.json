@@ -30,7 +30,7 @@
     "beautify": "js-beautify -s=2 *.*js* build/*co* examples/* src/*.*s src/*/*",
     "build": "rollup -c build/config.js",
     "lint": "npx eslint *.*js* build/*.js examples/*.js src/*.js src/*/*.js test/*.js test/*/*.js test/*/*/*.js",
-    "test": "run-s build lint test:controls test:providers test:unit",
+    "test": "npm run build && npm run lint && npm run test:controls && npm run test:providers && npm run test:unit",
     "test:controls": "testcafe chrome test/e2e/controls/*.test.js",
     "test:providers": "testcafe chrome test/e2e/providers/*.test.js",
     "test:unit": "jest",
@@ -41,7 +41,6 @@
     "ol": ">=6.0.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "latest",
     "@rollup/plugin-commonjs": "latest",
     "@rollup/plugin-json": "latest",
     "@rollup/plugin-node-resolve": "latest",
@@ -53,7 +52,6 @@
     "jest": "latest",
     "jest-environment-jsdom": "latest",
     "js-beautify": "latest",
-    "npm-run-all": "latest",
     "prettier": "latest",
     "rollup": "latest",
     "rollup-plugin-import-css": "latest",
