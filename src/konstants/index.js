@@ -1,6 +1,7 @@
-import * as _VARS_ from './vars.json';
-
-export const VARS = _VARS_;
+export {
+  default as VARS,
+}
+from './vars.json';
 
 export const EVENT_TYPE = {
   ADDRESSCHOSEN: 'addresschosen',

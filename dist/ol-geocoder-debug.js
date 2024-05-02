@@ -2,7 +2,7 @@
  * @myol/geocoder - v4.3.3
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 01/05/2024 20:49:08
+ * Built: 02/05/2024 19:44:19
  */
 
 (function (global, factory) {
@@ -63,7 +63,7 @@
   		result: "gcd-txt-result"
   	}
   };
-  var vars = {
+  var VARS = {
   	containerId: containerId,
   	buttonControlId: buttonControlId,
   	inputQueryId: inputQueryId,
@@ -71,19 +71,6 @@
   	inputSearchId: inputSearchId,
   	cssClasses: cssClasses
   };
-
-  var _VARS_ = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    buttonControlId: buttonControlId,
-    containerId: containerId,
-    cssClasses: cssClasses,
-    default: vars,
-    inputLabelId: inputLabelId,
-    inputQueryId: inputQueryId,
-    inputSearchId: inputSearchId
-  });
-
-  const VARS = _VARS_;
 
   const EVENT_TYPE = {
     ADDRESSCHOSEN: 'addresschosen',
@@ -482,123 +469,59 @@
   }
 
   /**
-   * @class Photon
+   * @class Bing
    */
-  class Photon {
+  class Bing {
     /**
      * @constructor
      */
     constructor() {
       this.settings = {
-        url: APIS.PHOTON,
+        url: APIS.BING,
+        callbackName: 'jsonp',
 
         params: {
-          q: '',
-          limit: 10,
-          lang: 'en',
+          query: '',
+          key: '',
+          includeNeighborhood: 0,
+          maxResults: 10,
         },
-
-        langs: ['de', 'it', 'fr', 'en'],
       };
     }
 
     getParameters(options) {
-      options.lang = options.lang.toLowerCase();
-
       return {
         url: this.settings.url,
+        callbackName: this.settings.callbackName,
 
         params: {
-          q: options.query,
-          limit: options.limit || this.settings.params.limit,
+          query: options.query,
+          key: options.key,
 
-          lang: this.settings.langs.includes(options.lang) ? options.lang : this.settings.params.lang,
+          includeNeighborhood: options.includeNeighborhood || this.settings.params.includeNeighborhood,
+
+          maxResults: options.maxResults || this.settings.params.maxResults,
         },
       };
     }
 
     handleResponse(results) {
-      if (results.features.length === 0) return [];
+      const {
+        resources
+      } = results.resourceSets[0];
 
-      return results.features.map((result) => ({
-        lon: result.geometry.coordinates[0],
-        lat: result.geometry.coordinates[1],
+      if (resources.length === 0) return [];
+
+      return resources.map((result) => ({
+        lon: result.point.coordinates[1],
+        lat: result.point.coordinates[0],
 
         address: {
-          name: result.properties.name,
-          postcode: result.properties.postcode,
-          city: result.properties.city,
-          state: result.properties.state,
-          country: result.properties.country,
+          name: result.name,
         },
 
         original: {
-          formatted: result.properties.name,
-          details: result.properties,
-        },
-      }));
-    }
-  }
-
-  /**
-   * @class OpenStreet
-   */
-  class OpenStreet {
-    /**
-     * @constructor
-     */
-    constructor(options) {
-      this.settings = {
-        url: APIS.OSM,
-        ...options, // #266 Allow custom URL for osm provider
-        params: {
-          q: '',
-          format: 'json',
-          addressdetails: 1,
-          limit: 10,
-          countrycodes: '',
-          viewbox: '',
-          'accept-language': 'en-US',
-        },
-      };
-    }
-
-    getParameters(opt) {
-      return {
-        url: this.settings.url,
-
-        params: {
-          q: opt.query,
-          format: this.settings.params.format,
-          addressdetails: this.settings.params.addressdetails,
-          limit: opt.limit || this.settings.params.limit,
-          countrycodes: opt.countrycodes || this.settings.params.countrycodes,
-          viewbox: opt.viewbox || this.settings.params.viewbox, // #260
-          'accept-language': opt.lang || this.settings.params['accept-language'],
-        },
-      };
-    }
-
-    handleResponse(results) {
-      if (results.length === 0) return [];
-
-      return results.map((result) => ({
-        lon: result.lon,
-        lat: result.lat,
-        bbox: result.boundingbox,
-
-        address: {
-          name: result.display_name,
-          road: result.address.road || '',
-          houseNumber: result.address.house_number || '',
-          postcode: result.address.postcode,
-          city: result.address.city || result.address.town,
-          state: result.address.state,
-          country: result.address.country,
-        },
-
-        original: {
-          formatted: result.display_name,
+          formatted: result.address.formattedAddress,
           details: result.address,
         },
       }));
@@ -670,66 +593,6 @@
   }
 
   /**
-   * @class Bing
-   */
-  class Bing {
-    /**
-     * @constructor
-     */
-    constructor() {
-      this.settings = {
-        url: APIS.BING,
-        callbackName: 'jsonp',
-
-        params: {
-          query: '',
-          key: '',
-          includeNeighborhood: 0,
-          maxResults: 10,
-        },
-      };
-    }
-
-    getParameters(options) {
-      return {
-        url: this.settings.url,
-        callbackName: this.settings.callbackName,
-
-        params: {
-          query: options.query,
-          key: options.key,
-
-          includeNeighborhood: options.includeNeighborhood || this.settings.params.includeNeighborhood,
-
-          maxResults: options.maxResults || this.settings.params.maxResults,
-        },
-      };
-    }
-
-    handleResponse(results) {
-      const {
-        resources
-      } = results.resourceSets[0];
-
-      if (resources.length === 0) return [];
-
-      return resources.map((result) => ({
-        lon: result.point.coordinates[1],
-        lat: result.point.coordinates[0],
-
-        address: {
-          name: result.name,
-        },
-
-        original: {
-          formatted: result.address.formattedAddress,
-          details: result.address,
-        },
-      }));
-    }
-  }
-
-  /**
    * @class OpenCage
    */
   class OpenCage {
@@ -783,6 +646,130 @@
         original: {
           formatted: result.formatted,
           details: result.components,
+        },
+      }));
+    }
+  }
+
+  /**
+   * @class OpenStreet
+   */
+  class OpenStreet {
+    /**
+     * @constructor
+     */
+    constructor(options) {
+      this.settings = {
+        url: APIS.OSM,
+        ...options, // #266 Allow custom URL for osm provider
+        params: {
+          q: '',
+          format: 'json',
+          addressdetails: 1,
+          limit: 10,
+          countrycodes: '',
+          viewbox: '',
+          'accept-language': 'en-US',
+        },
+      };
+    }
+
+    getParameters(opt) {
+      return {
+        url: this.settings.url,
+
+        params: {
+          q: opt.query,
+          format: this.settings.params.format,
+          addressdetails: this.settings.params.addressdetails,
+          limit: opt.limit || this.settings.params.limit,
+          countrycodes: opt.countrycodes || this.settings.params.countrycodes,
+          viewbox: opt.viewbox || this.settings.params.viewbox, // #260
+          'accept-language': opt.lang || this.settings.params['accept-language'],
+        },
+      };
+    }
+
+    handleResponse(results) {
+      if (results.length === 0) return [];
+
+      return results.map((result) => ({
+        lon: result.lon,
+        lat: result.lat,
+        bbox: result.boundingbox,
+
+        address: {
+          name: result.display_name,
+          road: result.address.road || '',
+          houseNumber: result.address.house_number || '',
+          postcode: result.address.postcode,
+          city: result.address.city || result.address.town,
+          state: result.address.state,
+          country: result.address.country,
+        },
+
+        original: {
+          formatted: result.display_name,
+          details: result.address,
+        },
+      }));
+    }
+  }
+
+  /**
+   * @class Photon
+   */
+  class Photon {
+    /**
+     * @constructor
+     */
+    constructor() {
+      this.settings = {
+        url: APIS.PHOTON,
+
+        params: {
+          q: '',
+          limit: 10,
+          lang: 'en',
+        },
+
+        langs: ['de', 'it', 'fr', 'en'],
+      };
+    }
+
+    getParameters(options) {
+      options.lang = options.lang.toLowerCase();
+
+      return {
+        url: this.settings.url,
+
+        params: {
+          q: options.query,
+          limit: options.limit || this.settings.params.limit,
+
+          lang: this.settings.langs.includes(options.lang) ? options.lang : this.settings.params.lang,
+        },
+      };
+    }
+
+    handleResponse(results) {
+      if (results.features.length === 0) return [];
+
+      return results.features.map((result) => ({
+        lon: result.geometry.coordinates[0],
+        lat: result.geometry.coordinates[1],
+
+        address: {
+          name: result.properties.name,
+          postcode: result.properties.postcode,
+          city: result.properties.city,
+          state: result.properties.state,
+          country: result.properties.country,
+        },
+
+        original: {
+          formatted: result.properties.name,
+          details: result.properties,
         },
       }));
     }
@@ -1235,7 +1222,7 @@
      * @return {String} Returns the version & build date
      */
     getVersion() {
-      return '4.3.3 01/05/2024 20:49:08';
+      return '4.3.3 02/05/2024 19:44:19';
     }
   }
 

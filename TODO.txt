@@ -1,6 +1,5 @@
 //TODO manual test opencage & photon
-//TODO automatic tests all 5 providers
-//TODO jest don't work (module problem)
+//TODO automatic tests photon
 //TODO BUG Geocoder : send button too far to the left on Android (ex: chemineur)
 //BEST Add dist zip in github version
 //BEST tests: delete -((win, doc) => {

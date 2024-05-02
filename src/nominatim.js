@@ -27,11 +27,11 @@ import {
   json,
 } from './helpers/ajax';
 
-import Photon from './providers/photon';
-import OpenStreet from './providers/osm';
-import MapQuest from './providers/mapquest';
 import Bing from './providers/bing';
+import MapQuest from './providers/mapquest';
 import OpenCage from './providers/opencage';
+import OpenStreet from './providers/osm';
+import Photon from './providers/photon';
 
 const klasses = VARS.cssClasses;
 
