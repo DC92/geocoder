@@ -17,8 +17,7 @@
     layers: [baseLayer],
   });
 
-  // Create an instance of the custom provider, passing any options that are
-  // required
+  // Create an instance of the custom provider, passing any options that are required
   const provider = OsOpenNamesSearch({
     url: '//t0.ads.astuntechnology.com/open/search/osopennames/',
   });
