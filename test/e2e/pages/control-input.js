@@ -1,6 +1,8 @@
 /* global document, ol, Geocoder */
 
-const baseLayer = new ol.layer.Tile({ source: new ol.source.OSM() });
+const baseLayer = new ol.layer.Tile({
+  source: new ol.source.OSM(),
+});
 
 const olview = new ol.View({
   center: [0, 0],

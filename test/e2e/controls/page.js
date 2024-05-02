@@ -1,6 +1,11 @@
-import { Selector } from 'testcafe';
+import {
+  Selector,
+} from 'testcafe';
 
-import { VARS, TARGET_TYPE } from '../../../src/konstants';
+import {
+  VARS,
+  TARGET_TYPE,
+} from '../../../src/konstants';
 
 export default class Page {
   constructor(control) {

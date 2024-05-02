@@ -1,6 +1,8 @@
 /* global fixture, test */
 
-import { PROVIDERS } from '../../../src/konstants';
+import {
+  PROVIDERS,
+} from '../../../src/konstants';
 
 import Page from './page';
 

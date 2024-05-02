@@ -27,14 +27,13 @@
     "nominatim"
   ],
   "scripts": {
-    "beautify": "js-beautify -s=2 *.*js* build/*co* examples/* src/*.*s src/*/*",
+    "beautify": "js-beautify -s=2 *.*js* build/*co* examples/* src/*.*s src/*/* test/*.*s test/*/*.*s test/*/*/*",
     "build": "rollup -c build/config.js",
-    "lint": "npx eslint *.*js* build/*.js examples/*.js src/*.js src/*/*.js test/*.js test/*/*.js test/*/*/*.js",
+    "lint": "npx eslint *.*js* build/*.*s examples/*.*s src/*.*s src/*/*.*s test/*.*s test/*/*.*s test/*/*/*.*s",
     "test": "npm run build && npm run lint && npm run test:controls && npm run test:providers && npm run test:unit",
     "test:controls": "testcafe chrome test/e2e/controls/*.test.js",
     "test:providers": "testcafe chrome test/e2e/providers/*.test.js",
-    "test:unit": "jest",
-    "test:unit:watch": "jest --watch"
+    "test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "dependencies": {},
   "peerDependencies": {

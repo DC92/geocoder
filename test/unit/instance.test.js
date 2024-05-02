@@ -9,8 +9,11 @@ import Control from 'ol/control/Control';
 import LayerVector from 'ol/layer/Vector';
 import SourceVector from 'ol/source/Vector';
 
-import Geocoder from '../../dist/ol-geocoder';
-import { DEFAULT_OPTIONS, PROVIDERS } from '../../src/konstants';
+import Geocoder from '../../src/base';
+import {
+  DEFAULT_OPTIONS,
+  PROVIDERS,
+} from '../../src/konstants';
 
 const options = {
   provider: PROVIDERS.PHOTON,

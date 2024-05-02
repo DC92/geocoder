@@ -1,7 +1,9 @@
 /* global Buffer, fixture, process, test */
 
 import '../../env';
-import { PROVIDERS } from '../../../src/konstants';
+import {
+  PROVIDERS,
+} from '../../../src/konstants';
 
 import Page from './page';
 

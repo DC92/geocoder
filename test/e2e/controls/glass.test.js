@@ -1,6 +1,8 @@
 /* global fixture, test */
 
-import { TARGET_TYPE } from '../../../src/konstants';
+import {
+  TARGET_TYPE
+} from '../../../src/konstants';
 
 import Page from './page';
 
