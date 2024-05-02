@@ -1,7 +1,5 @@
-//TODO manual test opencage & photon
 //TODO BUG Geocoder : send button too far to the left on Android (ex: chemineur)
 //BEST Add dist zip in github version
-//BEST tests: delete -((win, doc) => {
 
 *** *** *** *** *** *** *** *** *** ***
 NEXT DELIVERY
