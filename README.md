@@ -9,6 +9,7 @@
 </p>
 
 A geocoder extension compatible with OpenLayers v6.x to 9.0.0
+Requires html 5, CSS 3, ECMAscript2018^
 
 ![geocoder anim](https://raw.githubusercontent.com/Dominique92/ol-geocoder/screenshots/images/anim.gif)
 

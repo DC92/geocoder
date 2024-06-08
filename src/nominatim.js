@@ -180,7 +180,7 @@ export default class Nominatim {
           addressHtml = this.addressTemplate(row.address);
       }
 
-      if (response.length == 1) {
+      if (response.length === 1) {
         // #206 Direct access if options.limit: 1
         this.chosen(row, addressHtml, row.address, row.original);
       } else {

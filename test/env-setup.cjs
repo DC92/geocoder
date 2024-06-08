@@ -6,7 +6,7 @@
 
 // MIT license
 
-/* global window, require, clearTimeout */
+/* global window, clearTimeout */
 
 (() => {
   let lastTime = 0;

@@ -66,7 +66,7 @@ export default [{
       }),
       terser({
         output: {
-          comments: /^!/,
+          comments: /^!/u,
         }
       }),
     ],
