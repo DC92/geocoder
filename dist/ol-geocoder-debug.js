@@ -1,8 +1,8 @@
 /*! OpenLayers Control Geocoder
- * @myol/geocoder - v4.3.3
+ * @myol/geocoder - v4.3.3-4
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 02/05/2024 19:44:19
+ * Built: 21/02/2025 15:35:40
  */
 
 (function (global, factory) {
@@ -33,13 +33,11 @@
   var containerId = "gcd-container";
   var buttonControlId = "gcd-button-control";
   var inputQueryId = "gcd-input-query";
-  var inputLabelId = "gcd-input-label";
   var inputSearchId = "gcd-input-search";
   var cssClasses = {
   	namespace: "ol-geocoder",
   	spin: "gcd-pseudo-rotate",
   	hidden: "gcd-hidden",
-  	address: "gcd-address",
   	country: "gcd-country",
   	city: "gcd-city",
   	road: "gcd-road",
@@ -67,7 +65,6 @@
   	containerId: containerId,
   	buttonControlId: buttonControlId,
   	inputQueryId: inputQueryId,
-  	inputLabelId: inputLabelId,
   	inputSearchId: inputSearchId,
   	cssClasses: cssClasses
   };
@@ -925,7 +922,7 @@
             addressHtml = this.addressTemplate(row.address);
         }
 
-        if (response.length == 1) {
+        if (response.length === 1) {
           // #206 Direct access if options.limit: 1
           this.chosen(row, addressHtml, row.address, row.original);
         } else {
@@ -1105,6 +1102,7 @@
       mapElement.addEventListener(
         'click', {
           handleEvent(evt) {
+            that.clearResults(true);
             mapElement.removeEventListener(evt.type, this, false);
             that.registeredListeners.mapClick = false;
           },
@@ -1222,7 +1220,7 @@
      * @return {String} Returns the version & build date
      */
     getVersion() {
-      return '4.3.3 02/05/2024 19:44:19';
+      return '4.3.3-4 21/02/2025 15:35:40';
     }
   }
 

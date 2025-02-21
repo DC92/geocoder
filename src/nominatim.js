@@ -360,6 +360,7 @@ export default class Nominatim {
     mapElement.addEventListener(
       'click', {
         handleEvent(evt) {
+          that.clearResults(true);
           mapElement.removeEventListener(evt.type, this, false);
           that.registeredListeners.mapClick = false;
         },
