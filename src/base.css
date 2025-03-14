@@ -15,7 +15,7 @@
 
 .ol-geocoder.gcd-gl-container {
   position: absolute;
-  top: 4.875em;
+  top: 4.87em;
   left: .5em;
   box-sizing: border-box;
   font-size: 0.9em;
@@ -28,15 +28,15 @@
 }
 
 .ol-geocoder .gcd-gl-control {
-  width: 2.1875em;
-  height: 2.1875em;
+  width: 2.19em;
+  height: 2.19em;
   overflow: hidden;
   transition: width 200ms, height 200ms;
 }
 
 .ol-geocoder .gcd-gl-expanded {
-  width: 15.625em;
-  height: 2.1875em;
+  width: 15.62em;
+  height: 2.19em;
 }
 
 .ol-geocoder .gcd-gl-input {
@@ -44,11 +44,11 @@
   z-index: 99;
   top: 0.25em;
   left: 2.5em;
-  width: 14.84375em;
+  width: 14.84em;
   padding: 5px;
   border: 1px solid #ccc;
   font-family: inherit;
-  font-size: 0.875em;
+  font-size: 0.87em;
   background-color: #fff;
   color: #222;
 }
@@ -64,7 +64,7 @@
   z-index: 100;
   top: 0;
   right: 0;
-  width: 1.5625em;
+  width: 1.56em;
   height: 100%;
   line-height: 1.4;
   border: none;
@@ -84,10 +84,10 @@
 
 .ol-geocoder .gcd-gl-btn {
   position: absolute;
-  width: 1.5625em;
-  height: 1.5625em;
-  top: 0.125em;
-  left: 0.125em;
+  width: 1.56em;
+  height: 1.56em;
+  top: 0.12em;
+  left: 0.12em;
   cursor: pointer;
 }
 
@@ -98,7 +98,7 @@
 
 .ol-geocoder ul.gcd-gl-result {
   position: absolute;
-  top: 2.1875em;
+  top: 2.19em;
   left: 2em;
   width: 16.25em;
   max-height: 18.75em;
@@ -122,7 +122,7 @@
   overflow: hidden;
   border-bottom: 1px solid #eee;
   padding: 0;
-  line-height: 0.875rem;
+  line-height: 4.37em;
 }
 
 .ol-geocoder ul.gcd-gl-result>li>a {
@@ -147,7 +147,7 @@
 .ol-geocoder.gcd-txt-container {
   position: absolute;
   width: 25em;
-  height: 4.375em;
+  height: 4.37em;
   top: .5em;
   left: calc(50% - 12.5em);
   box-sizing: border-box;
@@ -162,7 +162,7 @@
 .ol-geocoder .gcd-txt-control {
   position: relative;
   width: 100%;
-  height: 4.375em;
+  height: 4.37em;
   border: 1px solid #ccc;
   background-color: #fff;
   overflow: hidden;
@@ -186,7 +186,7 @@
   text-indent: 6px;
   background-color: transparent;
   font-family: inherit;
-  font-size: 0.875em;
+  font-size: 0.87em;
 }
 
 .ol-geocoder .gcd-txt-input:focus {
@@ -235,7 +235,7 @@
 
 .ol-geocoder ul.gcd-txt-result {
   position: absolute;
-  top: 4.575em;
+  top: 4.57em;
   left: 0;
   width: 25em;
   max-height: 18.75em;
@@ -259,7 +259,7 @@
   overflow: hidden;
   border-bottom: 1px solid #eee;
   padding: 0;
-  line-height: 0.875rem;
+  line-height: 4.37em;
 }
 
 .ol-geocoder ul.gcd-txt-result>li>a {
@@ -301,13 +301,13 @@
 }
 
 .gcd-address {
-  font-size: 0.875em;
+  font-size: 0.87em;
   font-weight: 500;
   color: #333;
 }
 
 .gcd-road {
-  font-size: 0.875em;
+  font-size: 0.87em;
   font-weight: 500;
   color: #333;
 }

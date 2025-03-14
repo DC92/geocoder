@@ -1,8 +1,8 @@
 /*! OpenLayers Control Geocoder
- * @myol/geocoder - v4.3.3-4
+ * @myol/geocoder - v4.3.3-dev
  * DEVELOPMENT REPO of ol-geocoder
  * https://github.com/Dominique92/ol-geocoder
- * Built: 21/02/2025 15:35:40
+ * Built: 14/03/2025 21:19:00
  */
 
 (function (global, factory) {
@@ -1220,7 +1220,7 @@
      * @return {String} Returns the version & build date
      */
     getVersion() {
-      return '4.3.3-4 21/02/2025 15:35:40';
+      return '4.3.3-dev 14/03/2025 21:19:00';
     }
   }
 

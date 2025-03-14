@@ -1,4 +1,3 @@
-//TODO BUG Geocoder : send button too far to the left on Android (ex: chemineur)
 //BEST Add dist zip in github version
 
 *** *** *** *** *** *** *** *** *** ***
